@@ -70,6 +70,7 @@ h2 { font-size: 20px; margin: 0; letter-spacing: -.01em; }
 .dist { color: var(--ink); font-weight: 600; }
 .meta { display: flex; flex-wrap: wrap; gap: 6px; margin-top: auto; padding-top: 4px; }
 .tag { font-size: 12px; padding: 2px 8px; border-radius: 999px; background: var(--chip); color: var(--muted); }
+.tag.teen { background: color-mix(in srgb, var(--accent) 18%, transparent); color: var(--accent); font-weight: 600; }
 .src { font-size: 12px; padding: 2px 8px; border-radius: 999px; color: #fff; font-weight: 600; }
 .src.hc { background: var(--hc); } .src.dp { background: var(--dp); } .src.mlh { background: var(--mlh); } .src.itch { background: var(--itch); }
 :root[data-theme="dark"] .src.dp, :root[data-theme="dark"] .src.mlh { color: #111; }
@@ -85,14 +86,110 @@ footer .bad { color: var(--accent); }
   .search { grid-template-columns: 1fr 1fr; }
   .search .field { grid-column: 1 / -1; }
 }
+/* ---------- greeting ---------- */
+.greet { font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif; font-weight: 400;
+  font-size: clamp(32px, 6vw, 50px); letter-spacing: -.01em; display: flex; align-items: center; gap: 14px; margin: 22px 0 8px; }
+.spark { width: .8em; height: .8em; flex: none; color: var(--accent); }
+.edit { background: none; border: 0; padding: 0; color: var(--muted); text-decoration: underline; font-size: 14px; }
+
+/* ---------- first-visit setup ---------- */
+#onboard { position: fixed; inset: 0; z-index: 50; display: none; overflow: hidden;
+  background: #0c0b10; color: #f3efe8; }
+#onboard.show { display: grid; place-items: center; }
+.glow { position: absolute; border-radius: 50%; filter: blur(70px); opacity: .55; pointer-events: none; }
+.g1 { width: 520px; height: 520px; background: #ff5a36; left: -160px; top: -180px; animation: drift 18s ease-in-out infinite alternate; }
+.g2 { width: 460px; height: 460px; background: #6a3df0; right: -160px; bottom: -160px; animation: drift 22s ease-in-out infinite alternate-reverse; }
+.g3 { width: 300px; height: 300px; background: #ffb547; right: 18%; top: 12%; opacity: .25; animation: drift 26s ease-in-out infinite alternate; }
+@keyframes drift { to { transform: translate(60px, 50px) scale(1.12); } }
+.stars { position: absolute; inset: 0; pointer-events: none; opacity: .5;
+  background-image: radial-gradient(1px 1px at 12% 30%, #fff8, transparent), radial-gradient(1px 1px at 72% 18%, #fff7, transparent),
+    radial-gradient(1px 1px at 40% 80%, #fff6, transparent), radial-gradient(1.5px 1.5px at 88% 64%, #fff8, transparent),
+    radial-gradient(1px 1px at 22% 72%, #fff5, transparent), radial-gradient(1px 1px at 58% 42%, #fff4, transparent); }
+.ob { position: relative; width: min(560px, 100%); padding: 24px 16px; text-align: center; }
+.ob .brand { justify-content: center; color: #f3efe8; opacity: .85; margin-bottom: 34px; }
+.ob h2 { font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif; font-weight: 400;
+  font-size: clamp(28px, 6vw, 42px); line-height: 1.15; margin: 0 0 8px; }
+.ob p { color: #b9b3c4; margin: 0 0 26px; font-size: 15px; }
+.ob-step { display: none; animation: rise .45s ease both; }
+.ob-step.on { display: block; }
+@keyframes rise { from { opacity: 0; transform: translateY(12px); } }
+.ob-box { position: relative; display: flex; align-items: center; gap: 8px; background: rgba(255,255,255,.07);
+  border: 1px solid rgba(255,255,255,.14); border-radius: 16px; padding: 8px 8px 8px 18px; backdrop-filter: blur(10px); }
+.ob-box:focus-within { border-color: #ff8a6b; box-shadow: 0 0 0 4px rgba(255,90,54,.18); }
+.ob-box input { flex: 1; min-width: 0; background: none; border: 0; outline: none; color: #fff; font: inherit; font-size: 19px; padding: 8px 0; }
+.ob-box input::placeholder { color: #8d879a; }
+.go { width: 44px; height: 44px; padding: 0; border-radius: 12px; border: 0; background: #ff5a36; color: #fff; font-size: 20px; flex: none; }
+.go:disabled { opacity: .35; cursor: default; }
+.ob .suggest { background: #1c1a24; border-color: rgba(255,255,255,.12); text-align: left; z-index: 2; }
+.ob .suggest button { color: #f3efe8; }
+.ob .suggest button:hover, .ob .suggest button:focus { background: rgba(255,255,255,.08); }
+.picks { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+.pick { padding: 18px 10px; border-radius: 16px; background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.14);
+  color: #f3efe8; font-size: 16px; display: flex; flex-direction: column; gap: 6px; align-items: center; transition: transform .12s, border-color .12s; }
+.pick:hover, .pick:focus { transform: translateY(-2px); border-color: #ff8a6b; outline: none; }
+.pick span { font-size: 26px; }
+.ob-foot { display: flex; justify-content: space-between; align-items: center; margin-top: 26px; min-height: 24px; }
+.dots { display: flex; gap: 6px; }
+.dots i { width: 7px; height: 7px; border-radius: 50%; background: rgba(255,255,255,.2); transition: background .2s, width .2s; }
+.dots i.on { background: #ff5a36; width: 20px; border-radius: 4px; }
+.back { background: none; border: 0; color: #b9b3c4; padding: 4px 0; font-size: 14px; }
+.ob-note { font-size: 13px; color: #8d879a; margin-top: 12px; min-height: 18px; }
+@media (max-width: 480px) { .picks { grid-template-columns: 1fr; } .pick { flex-direction: row; justify-content: center; } }
+@media (prefers-reduced-motion: reduce) { .glow, .ob-step { animation: none; } }
 </style>
 </head>
 <body>
+<div id="onboard" role="dialog" aria-modal="true" aria-label="Set up HackFinder">
+  <div class="glow g1"></div><div class="glow g2"></div><div class="glow g3"></div><div class="stars"></div>
+  <div class="ob">
+    <div class="brand"><span class="dot"></span>HackFinder</div>
+
+    <div class="ob-step" data-step="0">
+      <h2>Hey there. What's your name?</h2>
+      <p>Let's find you something to build this weekend.</p>
+      <form class="ob-box" data-next><input id="ob-name" maxlength="30" placeholder="Your name" autocomplete="given-name"><button class="go" aria-label="Next">→</button></form>
+    </div>
+
+    <div class="ob-step" data-step="1">
+      <h2>Nice to meet you, <span class="ob-n"></span>. How old are you?</h2>
+      <p>Some events are only for high schoolers, some only for adults.</p>
+      <form class="ob-box" data-next><input id="ob-age" type="number" inputmode="numeric" min="8" max="99" placeholder="Age"><button class="go" aria-label="Next">→</button></form>
+      <div class="ob-note">Saved only in this browser. Never sent anywhere.</div>
+    </div>
+
+    <div class="ob-step" data-step="2">
+      <h2>Which city are you in?</h2>
+      <p>We'll show events you can get to.</p>
+      <div class="field">
+        <form class="ob-box" data-next><input id="ob-city" placeholder="Bangalore, Seattle, anywhere" autocomplete="off"><button class="go" aria-label="Next">→</button></form>
+        <div id="ob-suggest" class="suggest" role="listbox"></div>
+      </div>
+      <div class="ob-note" id="ob-city-note"></div>
+    </div>
+
+    <div class="ob-step" data-step="3">
+      <h2>What are you into?</h2>
+      <p>You can change this later with the filters.</p>
+      <div class="picks">
+        <button class="pick" data-int="hack"><span>⌨️</span>Hackathons</button>
+        <button class="pick" data-int="jam"><span>🎮</span>Game jams</button>
+        <button class="pick" data-int="both"><span>✨</span>Both</button>
+      </div>
+    </div>
+
+    <div class="ob-foot">
+      <button class="back" id="ob-back" type="button">← Back</button>
+      <div class="dots"><i></i><i></i><i></i><i></i></div>
+      <span style="width:44px"></span>
+    </div>
+  </div>
+</div>
+
 <div class="wrap">
   <header>
     <div class="brand"><span class="dot"></span>HackFinder</div>
-    <h1>Every hackathon and game jam near you.</h1>
-    <p class="sub">Pulled automatically from Hack Club, Devpost, MLH and itch.io. Nobody has to post anything twice.</p>
+    <h1 class="greet" id="greet"><svg class="spark" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 0c.6 5.6 2.2 8.6 4.6 10 1.9 1.1 4.3 1.6 7.4 2-3.1.4-5.5.9-7.4 2-2.4 1.4-4 4.4-4.6 10-.6-5.6-2.2-8.6-4.6-10C5.5 12.9 3.1 12.4 0 12c3.1-.4 5.5-.9 7.4-2C9.8 8.6 11.4 5.6 12 0z"/></svg><span id="greet-text">Every hackathon and game jam near you.</span></h1>
+    <p class="sub"><span id="greet-sub">Pulled automatically from Hack Club, Devpost, MLH and itch.io.</span> <button class="edit" id="edit-profile" type="button" hidden>Not you?</button></p>
   </header>
 
   <div class="search" role="search">
@@ -169,7 +266,8 @@ const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": 
 
 function card(e) {
   const srcs = e.sources.map(s => `<span class="src ${SRC_CLASS[s.name] || ""}">${esc(s.name)}</span>`).join("");
-  const tags = (e.tags || []).filter(t => t !== "MLH").slice(0, 3).map(t => `<span class="tag">${esc(t)}</span>`).join("");
+  const tags = (e.tags || []).filter(t => t !== "MLH").slice(0, 3)
+    .map(t => t === "High school" && state.teen ? `<span class="tag teen">For high schoolers</span>` : `<span class="tag">${esc(t)}</span>`).join("");
   const dist = e._d != null ? `<span class="dist">${e._d < 1 ? "<1" : Math.round(e._d)} km away</span> · ` : "";
   const where = e.mode === "online" ? "Online" : (e.place || "Location TBA") + (e.mode === "hybrid" ? " · also online" : "");
   return `<a class="card" href="${esc(e.url)}" target="_blank" rel="noopener">
@@ -226,7 +324,11 @@ function render() {
 function setHere(here) {
   state.here = here; store.set("hf-here", here);
   $("#loc").value = here.label;
-  $("#status").textContent = "";
+  $("#status").textContent = profile && profile.age < 18 ? "Heads up: some college hackathons need you to be 18+. Check each event's rules before you sign up." : "";
+  if (profile) {
+    const what = profile.interest === "hack" ? "hackathons" : profile.interest === "jam" ? "game jams" : "hackathons and game jams";
+    $("#greet-sub").textContent = `Here are the ${what} around ${here.label === "you" ? "you" : here.label}.`;
+  }
   render();
 }
 
@@ -239,17 +341,8 @@ $("#loc").addEventListener("input", e => {
   timer = setTimeout(async () => {
     lastQ = q;
     try {
-      const r = await fetch(`https://photon.komoot.io/api/?limit=12&lang=en&q=${encodeURIComponent(q)}`);
-      const j = await r.json();
+      const res = await findPlaces(q);
       if (q !== lastQ) return;
-      const AREA = ["city", "town", "village", "suburb", "municipality", "borough", "county", "state", "country", "district", "hamlet"];
-      const seen = new Set();
-      const res = (j.features || [])
-        .filter(f => f.properties.osm_key === "place" || f.properties.osm_key === "boundary" || AREA.includes(f.properties.type))
-        .map(f => ({ name: f.properties.name, admin1: f.properties.state, country: f.properties.country,
-                     latitude: f.geometry.coordinates[1], longitude: f.geometry.coordinates[0] }))
-        .filter(p => { const k = [p.name, p.admin1, p.country].join("|"); if (seen.has(k)) return false; seen.add(k); return true; })
-        .slice(0, 6);
       $("#suggest").innerHTML = res.length ? res.map((p, i) =>
         `<button type="button" data-i="${i}">${esc(p.name)} <small>${esc([p.admin1, p.country].filter(Boolean).join(", "))}</small></button>`).join("")
         : `<button type="button" disabled>No places found</button>`;
@@ -293,8 +386,142 @@ function ago(iso) {
   return m < 60 ? `${m} min ago` : m < 1440 ? `${Math.round(m / 60)} h ago` : `${Math.round(m / 1440)} days ago`;
 }
 
+// ---------- profile + greeting ----------
+const HACK_SRCS = ["Hack Club", "Devpost", "MLH"], JAM_SRCS = ["itch.io"];
+let profile = store.get("hf-profile");
+
+function syncChips() {
+  document.querySelectorAll("#filters .chip").forEach(b => {
+    if (b.dataset.src) b.setAttribute("aria-pressed", state.srcs.has(b.dataset.src));
+    if (b.dataset.mode) b.setAttribute("aria-pressed", state.modes.has(b.dataset.mode));
+    if ("hs" in b.dataset) b.setAttribute("aria-pressed", state.hsOnly);
+  });
+}
+
+function applyProfile(p) {
+  state.srcs = new Set(p.interest === "hack" ? HACK_SRCS : p.interest === "jam" ? JAM_SRCS : [...HACK_SRCS, ...JAM_SRCS]);
+  state.teen = p.age < 18;  // highlights high-school events; doesn't hide anything
+  syncChips();
+}
+
+function greeting(name, firstTime) {
+  const h = new Date().getHours(), day = new Date().getDate();
+  const pick = arr => arr[day % arr.length];  // changes daily, stays put within a day
+  if (firstTime) return `Welcome, ${name}`;
+  if (h >= 0 && h < 5) return pick([`Late night, ${name}?`, `Still up, ${name}?`, `Midnight coding, ${name}?`]);
+  if (h < 12) return pick([`Morning, ${name}`, `Good morning, ${name}`, `Welcome back, ${name}`]);
+  if (h < 17) return pick([`Afternoon, ${name}`, `Welcome back, ${name}`, `Hey ${name}`]);
+  if (h < 22) return pick([`Evening, ${name}`, `Welcome back, ${name}`, `Good evening, ${name}`]);
+  return pick([`Night owl mode, ${name}?`, `Late one, ${name}?`, `Evening, ${name}`]);
+}
+
+function showGreeting(firstTime) {
+  if (!profile) return;
+  $("#greet-text").textContent = greeting(profile.name, firstTime);
+  const what = profile.interest === "hack" ? "hackathons" : profile.interest === "jam" ? "game jams" : "hackathons and game jams";
+  $("#greet-sub").textContent = profile.city ? `Here are the ${what} around ${profile.city.label}.` : `Here are the latest ${what}.`;
+  $("#edit-profile").hidden = false;
+  document.title = "HackFinder";
+}
+
+function runOnboarding() {
+  return new Promise(done => {
+    const ob = $("#onboard"), steps = [...ob.querySelectorAll(".ob-step")], dots = [...ob.querySelectorAll(".dots i")];
+    const p = { name: "", age: null, city: null, interest: "both" };
+    let i = 0;
+    const show = n => {
+      i = n;
+      steps.forEach((s, k) => s.classList.toggle("on", k === n));
+      dots.forEach((d, k) => d.classList.toggle("on", k === n));
+      $("#ob-back").style.visibility = n ? "visible" : "hidden";
+      ob.querySelectorAll(".ob-n").forEach(x => x.textContent = p.name);
+      const inp = steps[n].querySelector("input, .pick"); if (inp) setTimeout(() => inp.focus(), 60);
+    };
+    ob.classList.add("show");
+    document.body.style.overflow = "hidden";
+    show(0);
+
+    $("#ob-back").onclick = () => show(Math.max(0, i - 1));
+    ob.querySelectorAll("form[data-next]").forEach(f => f.onsubmit = e => {
+      e.preventDefault();
+      if (i === 0) { const v = $("#ob-name").value.trim(); if (!v) return; p.name = v; show(1); }
+      else if (i === 1) {
+        const a = parseInt($("#ob-age").value, 10);
+        if (!(a >= 5 && a <= 120)) { $("#ob-age").focus(); return; }
+        p.age = a; show(2);
+      } else if (i === 2) {
+        const b = $("#ob-suggest button[data-i]");
+        if (p.city) show(3); else if (b) b.click(); else $("#ob-city-note").textContent = "Type your city, then pick it from the list.";
+      }
+    });
+
+    // city with suggestions (same Photon lookup as the main search)
+    const cityIn = $("#ob-city");
+    let t2, last2 = "";
+    cityIn.addEventListener("input", () => {
+      p.city = null; $("#ob-city-note").textContent = "";
+      clearTimeout(t2);
+      const q = cityIn.value.trim();
+      if (q.length < 2) { $("#ob-suggest").style.display = "none"; return; }
+      t2 = setTimeout(async () => {
+        last2 = q;
+        try {
+          const res = await findPlaces(q);
+          if (q !== last2) return;
+          $("#ob-suggest").innerHTML = res.length ? res.map((r, k) =>
+            `<button type="button" data-i="${k}">${esc(r.name)} <small>${esc([r.admin1, r.country].filter(Boolean).join(", "))}</small></button>`).join("")
+            : `<button type="button" disabled>No places found</button>`;
+          $("#ob-suggest").style.display = "block";
+          $("#ob-suggest").querySelectorAll("button[data-i]").forEach(b => b.onclick = () => {
+            const r = res[+b.dataset.i];
+            p.city = { lat: r.latitude, lng: r.longitude, label: r.name };
+            cityIn.value = r.name + (r.country ? ", " + r.country : "");
+            $("#ob-suggest").style.display = "none";
+            setTimeout(() => show(3), 250);
+          });
+        } catch { $("#ob-city-note").textContent = "Couldn't look that up. Check your connection."; }
+      }, 250);
+    });
+
+    ob.querySelectorAll(".pick").forEach(b => b.onclick = () => {
+      p.interest = b.dataset.int;
+      ob.classList.remove("show");
+      document.body.style.overflow = "";
+      done(p);
+    });
+  });
+}
+
+async function findPlaces(q) {
+  const r = await fetch(`https://photon.komoot.io/api/?limit=12&lang=en&q=${encodeURIComponent(q)}`);
+  const j = await r.json();
+  const AREA = ["city", "town", "village", "suburb", "municipality", "borough", "county", "state", "country", "district", "hamlet"];
+  const seen = new Set();
+  return (j.features || [])
+    .filter(f => f.properties.osm_key === "place" || f.properties.osm_key === "boundary" || AREA.includes(f.properties.type))
+    .map(f => ({ name: f.properties.name, admin1: f.properties.state, country: f.properties.country,
+                 latitude: f.geometry.coordinates[1], longitude: f.geometry.coordinates[0] }))
+    .filter(x => { const k = [x.name, x.admin1, x.country].join("|"); if (seen.has(k)) return false; seen.add(k); return true; })
+    .slice(0, 6);
+}
+
+$("#edit-profile").onclick = async () => {
+  profile = await runOnboarding();
+  store.set("hf-profile", profile);
+  applyProfile(profile); showGreeting(true);
+  if (profile.city) setHere(profile.city); else render();
+};
+
 (async function start() {
   const r0 = store.get("hf-radius"); if (r0) { state.radius = r0; $("#radius").value = String(r0); }
+  let firstTime = false;
+  if (!profile || !profile.name) {
+    profile = await runOnboarding();
+    store.set("hf-profile", profile);
+    firstTime = true;
+  }
+  showGreeting(firstTime);
+  applyProfile(profile);
   try {
     const data = await (await fetch("events.json", { cache: "no-cache" })).json();
     state.events = data.events || [];
@@ -305,7 +532,8 @@ function ago(iso) {
   } catch {
     $("#status").textContent = "Couldn't load events.json. If you're opening this file directly, run it through a local server or GitHub Pages.";
   }
-  const h = store.get("hf-here"); if (h && h.lat != null) setHere(h); else render();
+  const h = store.get("hf-here") || profile.city;  // last place searched, else the setup city
+  if (h && h.lat != null) setHere(h); else render();
 })();
 </script>
 </body>
