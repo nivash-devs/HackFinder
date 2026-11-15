@@ -135,10 +135,13 @@ def parse_devpost_dates(text):
 
 def parse_duration(text):
     """itch.io durations like '4 days', '2 weeks', '1 month', '48 hours' -> timedelta"""
-    m = re.match(r"(\d+)\s*(hour|day|week|month|year)", (text or "").lower())
+    t = re.sub(r"^(an?)\s", "1 ", (text or "").strip().lower())  # "an hour" -> "1 hour"
+    m = re.match(r"(\d+)\s*(minute|hour|day|week|month|year)", t)
     if not m:
         return None
     n, unit = int(m[1]), m[2]
+    if unit == "minute":
+        return dt.timedelta(minutes=n)
     return dt.timedelta(hours=n) if unit == "hour" else dt.timedelta(
         days=n * {"day": 1, "week": 7, "month": 30, "year": 365}[unit])
 
@@ -248,6 +251,14 @@ def from_itch(cache, today=None):
                     end = when + dur if dur else None
                 else:  # in-progress jams show when they end
                     end = when
+            else:
+                # In-progress jams only say "Submission closes in 11 hours", with no exact time,
+                # so work the end time out from the current time.
+                rel = j.select_one(".date_countdown")
+                left = parse_duration(rel.get_text()) if rel else None
+                if left:
+                    clock = dt.datetime.now(dt.timezone.utc).replace(tzinfo=None) if today is None else now
+                    end = (clock + left).replace(second=0, microsecond=0)
             if end and end < now:
                 continue
             joined = j.select_one(".jam_stats .number")
