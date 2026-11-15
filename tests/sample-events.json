@@ -1,0 +1,193 @@
+{
+ "generated_at": "2026-11-15T14:22:05.725561+00:00",
+ "sources": {
+  "Hack Club": {
+   "ok": true,
+   "count": 3
+  },
+  "Devpost": {
+   "ok": true,
+   "count": 3
+  },
+  "MLH": {
+   "ok": true,
+   "count": 1
+  },
+  "itch.io": {
+   "ok": true,
+   "count": 2
+  }
+ },
+ "events": [
+  {
+   "name": "Earth Hacks 2027",
+   "url": "https://earthhacks.dev",
+   "start": "2027-01-23T17:00:00.000Z",
+   "end": "2027-01-24T05:30:00.000Z",
+   "mode": "in-person",
+   "place": "San Francisco, California, United States",
+   "lat": 37.78,
+   "lng": -122.42,
+   "image": "https://x/logo.png",
+   "tags": [
+    "High school"
+   ],
+   "extra": null,
+   "sources": [
+    {
+     "name": "Hack Club",
+     "url": "https://earthhacks.dev"
+    }
+   ]
+  },
+  {
+   "name": "Cosmo Hacks",
+   "url": "https://cosmo.dev",
+   "start": "2027-02-01T00:00:00Z",
+   "end": "2027-02-02T00:00:00Z",
+   "mode": "online",
+   "place": null,
+   "lat": null,
+   "lng": null,
+   "image": null,
+   "tags": [
+    "High school"
+   ],
+   "extra": null,
+   "sources": [
+    {
+     "name": "Hack Club",
+     "url": "https://cosmo.dev"
+    }
+   ]
+  },
+  {
+   "name": "MadHacks 2026",
+   "url": "https://madhacks-fall-2026.devpost.com/",
+   "start": "2026-11-14",
+   "end": "2026-11-15",
+   "mode": "in-person",
+   "place": "1205 University Ave, Madison, WI 53706, USA",
+   "lat": 43.0727,
+   "lng": -89.4075,
+   "image": "https://cdn/x.png",
+   "tags": [
+    "Open Ended"
+   ],
+   "extra": "146 registered",
+   "sources": [
+    {
+     "name": "Devpost",
+     "url": "https://madhacks-fall-2026.devpost.com/"
+    }
+   ]
+  },
+  {
+   "name": "Kiroween 2026",
+   "url": "https://kiroween.devpost.com/",
+   "start": "2026-10-30",
+   "end": "2026-12-04",
+   "mode": "online",
+   "place": null,
+   "lat": null,
+   "lng": null,
+   "image": null,
+   "tags": [],
+   "extra": null,
+   "sources": [
+    {
+     "name": "Devpost",
+     "url": "https://kiroween.devpost.com/"
+    }
+   ]
+  },
+  {
+   "name": "HackUTA '26",
+   "url": "https://hackuta.devpost.com/",
+   "start": "2026-11-14",
+   "end": "2026-11-15",
+   "mode": "in-person",
+   "place": "University of Texas at Arlington",
+   "lat": 32.7299,
+   "lng": -97.1153,
+   "image": "https://mlh/x.png",
+   "tags": [
+    "MLH"
+   ],
+   "extra": null,
+   "sources": [
+    {
+     "name": "Devpost",
+     "url": "https://hackuta.devpost.com/"
+    },
+    {
+     "name": "MLH",
+     "url": "https://hackuta.com/"
+    }
+   ]
+  },
+  {
+   "name": "GMTK Game Jam 2027",
+   "url": "https://itch.io/jam/gmtk-2027",
+   "start": "2027-08-11T17:00:00Z",
+   "end": "2027-08-15T17:00:00Z",
+   "mode": "online",
+   "place": null,
+   "lat": null,
+   "lng": null,
+   "image": null,
+   "tags": [
+    "Game jam"
+   ],
+   "extra": "2,042 joined \u00b7 by Game Maker's Toolkit",
+   "sources": [
+    {
+     "name": "itch.io",
+     "url": "https://itch.io/jam/gmtk-2027"
+    }
+   ]
+  },
+  {
+   "name": "Live Jam",
+   "url": "https://itch.io/jam/live",
+   "start": null,
+   "end": "2099-01-01T00:00:00Z",
+   "mode": "online",
+   "place": null,
+   "lat": null,
+   "lng": null,
+   "image": null,
+   "tags": [
+    "Game jam"
+   ],
+   "extra": null,
+   "sources": [
+    {
+     "name": "itch.io",
+     "url": "https://itch.io/jam/live"
+    }
+   ]
+  },
+  {
+   "name": "Hack Peel",
+   "url": "https://example.org",
+   "sources": [
+    {
+     "name": "Hack Club",
+     "url": "https://example.org"
+    }
+   ],
+   "start": "2027-02-20",
+   "end": "2027-02-21",
+   "mode": "in-person",
+   "place": "Mississauga, Ontario, Canada",
+   "lat": 43.59,
+   "lng": -79.64,
+   "image": null,
+   "tags": [
+    "High school"
+   ],
+   "extra": null
+  }
+ ]
+}
