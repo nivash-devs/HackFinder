@@ -154,7 +154,9 @@ footer .bad { color: var(--x); }
 
 @media (max-width: 720px) {
   header { grid-template-columns: 1fr; padding-top: 24px; }
-  .search { grid-template-columns: 1fr; position: static; }
+  .search { grid-template-columns: minmax(0, 1fr); position: static; }
+  .search > * { min-width: 0; }
+  .edit { padding: 8px 6px; margin: -8px 0; }
   .radius { justify-content: space-between; }
   .radius .val { flex: 1; }
   .radius .bars { display: none; }
