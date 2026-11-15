@@ -252,11 +252,15 @@ def from_itch(cache, today=None):
                 else:  # in-progress jams show when they end
                     end = when
             else:
-                # In-progress jams only say "Submission closes in 11 hours", with no exact time,
-                # so work the end time out from the current time.
+                # In-progress jams put the deadline in the text, e.g. "2026-11-16T01:59:00Z"
+                # (the browser later rewrites it to "11 hours"), so accept both forms.
                 rel = j.select_one(".date_countdown")
-                left = parse_duration(rel.get_text()) if rel else None
-                if left:
+                txt = rel.get_text(strip=True) if rel else ""
+                iso = re.match(r"\d{4}-\d{2}-\d{2}T\d{2}:\d{2}(:\d{2})?Z?$", txt)
+                left = None if iso else parse_duration(txt)
+                if iso:
+                    end = dt.datetime.fromisoformat(txt.rstrip("Z"))
+                elif left:
                     clock = dt.datetime.now(dt.timezone.utc).replace(tzinfo=None) if today is None else now
                     end = (clock + left).replace(second=0, microsecond=0)
             if end and end < now:
