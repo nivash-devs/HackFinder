@@ -154,10 +154,10 @@ function km(a, b) { // great-circle distance (haversine)
   const h = Math.sin(dLat / 2) ** 2 + Math.cos(r(a.lat)) * Math.cos(r(b.lat)) * Math.sin(dLng / 2) ** 2;
   return 2 * R * Math.asin(Math.sqrt(h));
 }
-const toDate = s => s ? new Date(s.length === 10 ? s + "T12:00:00" : s) : null;
+const toDate = (s, endOfDay) => s ? new Date(s.length === 10 ? s + (endOfDay ? "T23:59:59" : "T00:00:00") : s) : null;
 const fmtDay = d => d.toLocaleDateString(undefined, { month: "short", day: "numeric" });
 function when(e) {
-  const s = toDate(e.start), t = toDate(e.end), now = new Date();
+  const s = toDate(e.start), t = toDate(e.end, true), now = new Date();
   if (s && s <= now && t && t >= now) return `<span class="live">Happening now</span> · ends ${fmtDay(t)}`;
   if (!s && t) return `Ends ${fmtDay(t)}${t.getFullYear() !== now.getFullYear() ? ", " + t.getFullYear() : ""}`;
   if (!s) return "Date TBA";
@@ -189,7 +189,7 @@ function visible(e) {
 function render() {
   const pool = state.events.filter(visible);
   // live events first (by when they end), then upcoming ones by start date
-  const key = e => { const s = toDate(e.start), t = toDate(e.end), n = Date.now();
+  const key = e => { const s = toDate(e.start), t = toDate(e.end, true), n = Date.now();
     if ((!s || s <= n) && t) return t.getTime() - 1e13; return s ? s.getTime() : Infinity; };
   const byDate = (a, b) => key(a) - key(b);
 
@@ -230,7 +230,7 @@ function setHere(here) {
   render();
 }
 
-// City search (Open-Meteo's free geocoder, no key needed)
+// City search (Photon, a free OpenStreetMap geocoder built for search-as-you-type; knows "Bangalore" = Bengaluru)
 let timer, lastQ = "";
 $("#loc").addEventListener("input", e => {
   clearTimeout(timer);
@@ -239,10 +239,17 @@ $("#loc").addEventListener("input", e => {
   timer = setTimeout(async () => {
     lastQ = q;
     try {
-      const r = await fetch(`https://geocoding-api.open-meteo.com/v1/search?count=6&language=en&format=json&name=${encodeURIComponent(q)}`);
+      const r = await fetch(`https://photon.komoot.io/api/?limit=12&lang=en&q=${encodeURIComponent(q)}`);
       const j = await r.json();
       if (q !== lastQ) return;
-      const res = j.results || [];
+      const AREA = ["city", "town", "village", "suburb", "municipality", "borough", "county", "state", "country", "district", "hamlet"];
+      const seen = new Set();
+      const res = (j.features || [])
+        .filter(f => f.properties.osm_key === "place" || f.properties.osm_key === "boundary" || AREA.includes(f.properties.type))
+        .map(f => ({ name: f.properties.name, admin1: f.properties.state, country: f.properties.country,
+                     latitude: f.geometry.coordinates[1], longitude: f.geometry.coordinates[0] }))
+        .filter(p => { const k = [p.name, p.admin1, p.country].join("|"); if (seen.has(k)) return false; seen.add(k); return true; })
+        .slice(0, 6);
       $("#suggest").innerHTML = res.length ? res.map((p, i) =>
         `<button type="button" data-i="${i}">${esc(p.name)} <small>${esc([p.admin1, p.country].filter(Boolean).join(", "))}</small></button>`).join("")
         : `<button type="button" disabled>No places found</button>`;
