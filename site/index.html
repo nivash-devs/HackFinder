@@ -8,10 +8,10 @@
 <meta name="theme-color" content="#14171c">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@500;700&family=JetBrains+Mono:wght@400;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@500;700&family=Space+Grotesk:wght@600;700&family=JetBrains+Mono:wght@400;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-/* Colours borrowed from a 3D editor's axis gizmo:
-   X red = in person, Y green = happening now, Z blue = online. */
+/* Colours borrowed from a 3D editor's axes:
+   X red = in person, Y green = hybrid, Z blue = online. */
 :root {
   color-scheme: dark;
   --bg: #14171c; --bg-2: #181c22; --panel: #1d2229; --panel-2: #242a33; --line: #303743; --line-2: #3c4452;
@@ -20,6 +20,7 @@
   --x-ink: #2a0d0d; --y-ink: #0f230a; --z-ink: #08182b;
   --grid: rgba(255,255,255,.035); --grid-major: rgba(255,255,255,.06);
   --pixel: "Pixelify Sans", ui-monospace, monospace;
+  --display: "Space Grotesk", var(--sans);
   --mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
   --sans: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   --hard: 4px 4px 0 rgba(0,0,0,.55);
@@ -36,37 +37,31 @@ a { color: inherit; }
 button { font: inherit; color: inherit; cursor: pointer; }
 .wrap { position: relative; z-index: 1; max-width: 1040px; margin: 0 auto; padding: 0 16px; }
 
-/* editor "floor": a perspective grid with the red X axis and blue Z axis lying on it */
-.floor { position: fixed; left: 0; right: 0; bottom: 0; height: 46vh; z-index: 0; pointer-events: none; overflow: hidden;
+/* setup-screen "floor": a perspective grid with the red X and blue Z axes lying on it.
+   Only the grid layer moves, and it moves with transform so the GPU handles it. */
+.floor { position: absolute; left: 0; right: 0; bottom: 0; height: 46vh; z-index: 0; pointer-events: none; overflow: hidden;
   perspective: 260px; perspective-origin: 50% 0%;
   -webkit-mask-image: linear-gradient(to bottom, transparent, #000 55%); mask-image: linear-gradient(to bottom, transparent, #000 55%); }
-.plane { position: absolute; left: -150%; width: 400%; top: 0; height: 400%; transform-origin: 50% 0; transform: rotateX(72deg); }
-.plane::before { content: ""; position: absolute; inset: 0;
+.plane { position: absolute; left: -100%; width: 300%; top: 0; height: 240%; transform-origin: 50% 0; transform: rotateX(72deg); overflow: hidden; }
+.plane::before { content: ""; position: absolute; left: 0; right: 0; top: -48px; bottom: 0; will-change: transform;
   background-image: linear-gradient(rgba(255,255,255,.075) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.075) 1px, transparent 1px);
   background-size: 48px 48px; animation: scroll-floor 3s linear infinite; }
 .plane::after { content: ""; position: absolute; inset: 0;
   background:
-    linear-gradient(90deg, transparent calc(50% - 1.5px), rgba(82,167,255,.75) calc(50% - 1.5px), rgba(82,167,255,.75) calc(50% + 1.5px), transparent calc(50% + 1.5px)),
-    linear-gradient(transparent 191px, rgba(255,93,93,.75) 191px, rgba(255,93,93,.75) 194px, transparent 194px); }
-body > .floor { opacity: .5; }
-body > .floor .plane::after { opacity: .35; }  /* axes stay faint behind the cards */
-@keyframes scroll-floor { to { background-position: 0 48px, 0 0; } }
+    linear-gradient(90deg, transparent calc(50% - 1.5px), rgba(82,167,255,.7) calc(50% - 1.5px), rgba(82,167,255,.7) calc(50% + 1.5px), transparent calc(50% + 1.5px)),
+    linear-gradient(transparent 191px, rgba(255,93,93,.7) 191px, rgba(255,93,93,.7) 194px, transparent 194px); }
+@keyframes scroll-floor { to { transform: translateY(48px); } }
 
 /* pixel logo + wordmark */
 .brand { display: flex; align-items: center; gap: 10px; font: 700 18px var(--pixel); letter-spacing: .02em; }
 .logo { width: 22px; height: 22px; image-rendering: pixelated; flex: none; }
 
 /* header + gizmo */
-header { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 16px; padding: 34px 0 22px; }
-.greet { font: 700 clamp(30px, 5.6vw, 52px)/1.05 var(--pixel); margin: 20px 0 8px; letter-spacing: .01em; }
-.greet .cur { display: inline-block; width: .45em; height: .9em; background: var(--y); margin-left: .12em; vertical-align: -.08em; animation: blink 1.1s steps(1) infinite; }
-@keyframes blink { 50% { opacity: 0; } }
+header { display: grid; grid-template-columns: 1fr; align-items: center; gap: 16px; padding: 34px 0 22px; }
+.greet { font: 700 clamp(32px, 6vw, 56px)/1.05 var(--display); margin: 18px 0 8px; letter-spacing: -.025em; }
 .sub { color: var(--muted); margin: 0; }
 .edit { background: none; border: 0; padding: 0 0 0 6px; color: var(--muted); text-decoration: underline dotted; font-size: 14px; }
 .edit:hover { color: var(--ink); }
-.gizmo { width: 112px; height: 112px; flex: none; }
-.gizmo .spin { transform-origin: 56px 56px; animation: wobble 9s ease-in-out infinite alternate; }
-@keyframes wobble { from { transform: rotate(-8deg); } to { transform: rotate(8deg); } }
 
 /* search panel */
 .panel { background: var(--panel); border: 1px solid var(--line); border-radius: 6px; box-shadow: var(--hard); }
@@ -125,6 +120,8 @@ section { margin: 34px 0; }
 h2 { font: 700 21px var(--pixel); margin: 0; display: flex; align-items: center; gap: 10px; letter-spacing: .01em; }
 h2::before { content: ""; width: 12px; height: 12px; background: var(--c, var(--ink)); box-shadow: 3px 3px 0 rgba(0,0,0,.5); flex: none; }
 #near-sec { --c: var(--x); } #online-sec { --c: var(--z); }
+#near-sec h2::before { background: linear-gradient(135deg, var(--x) 50%, var(--y) 50%); }
+#online-sec h2::before { background: linear-gradient(135deg, var(--z) 50%, var(--y) 50%); }
 .count { white-space: nowrap; font: 12px var(--mono); color: var(--muted); border: 1px solid var(--line); padding: 3px 8px; border-radius: 3px; background: var(--panel); }
 
 /* cards */
@@ -134,20 +131,20 @@ h2::before { content: ""; width: 12px; height: 12px; background: var(--c, var(--
   transition: transform .18s cubic-bezier(.22,1,.36,1), box-shadow .18s, border-color .18s; }
 .card::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 4px; background: var(--c); border-radius: 6px 0 0 6px; }
 .card.m-in-person { --c: var(--x); }
-.card.m-hybrid::before { background: linear-gradient(var(--x) 50%, var(--z) 50%); }
-.card.m-hybrid { --c: var(--x); }
+.card.m-hybrid { --c: var(--y); }
 .card:hover { transform: translate(-3px, -3px); box-shadow: 7px 7px 0 color-mix(in srgb, var(--c) 55%, #000); border-color: color-mix(in srgb, var(--c) 50%, var(--line)); }
 .card:active { transform: translate(1px, 1px); box-shadow: 2px 2px 0 rgba(0,0,0,.5); }
 .when { font: 600 12px var(--mono); color: var(--muted); letter-spacing: .02em; text-transform: uppercase; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
-.live { color: var(--y-ink); background: var(--y); padding: 1px 6px 1px 5px; border-radius: 2px; display: inline-flex; align-items: center; gap: 5px; }
-.live::before { content: ""; width: 6px; height: 6px; background: var(--y-ink); animation: blink 1s steps(1) infinite; }
+.live { color: var(--bg); background: var(--ink); padding: 1px 6px 1px 5px; border-radius: 2px; display: inline-flex; align-items: center; gap: 5px; }
+.live::before { content: ""; width: 6px; height: 6px; background: var(--bg); }
 .name { font-size: 17px; font-weight: 600; line-height: 1.3; overflow-wrap: anywhere; }
 .where { color: var(--muted); font-size: 13.5px; overflow-wrap: anywhere; }
 .dist { color: var(--x); font: 600 12.5px var(--mono); }
 .meta { display: flex; flex-wrap: wrap; gap: 6px; margin-top: auto; padding-top: 6px; }
 .tag, .src { font: 11.5px var(--mono); padding: 2px 7px; border-radius: 2px; border: 1px solid var(--line); color: var(--muted); }
 .src { color: var(--ink); border-color: var(--line-2); background: var(--panel-2); }
-.tag.teen { color: var(--y); border-color: color-mix(in srgb, var(--y) 45%, var(--line)); }
+.tag.teen { color: var(--ink); border-color: var(--line-2); }
+.tag.teen::before { content: "★ "; color: #ffd166; }
 .tag.mode { color: var(--c); border-color: color-mix(in srgb, var(--c) 45%, var(--line)); }
 .empty { border: 2px dashed var(--line); border-radius: 6px; padding: 28px; text-align: center; color: var(--muted); background: rgba(20,23,28,.6); }
 .empty b { color: var(--ink); }
@@ -157,7 +154,6 @@ footer .bad { color: var(--x); }
 
 @media (max-width: 720px) {
   header { grid-template-columns: 1fr; padding-top: 24px; }
-  .gizmo { display: none; }
   .search { grid-template-columns: 1fr; position: static; }
   .radius { justify-content: space-between; }
   .radius .val { flex: 1; }
@@ -189,9 +185,9 @@ header > div > :nth-child(2) { animation-delay: .06s; } header > div > :nth-chil
 @keyframes ob-out { to { opacity: 0; } }
 @keyframes ob-lift { to { transform: translateY(-24px) scale(.98); filter: blur(4px); } }
 .ob { position: relative; z-index: 1; width: min(580px, 100%); padding: 24px 16px; text-align: center; }
-.ob .brand { justify-content: center; margin-bottom: 18px; }
-.ob .gizmo { width: 132px; height: 132px; margin: 0 auto 6px; display: block; }
-.ob h2 { display: block; font: 700 clamp(26px, 5.4vw, 38px)/1.2 var(--pixel); margin: 0 0 8px; }
+.ob .brand { justify-content: center; margin-bottom: 26px; font-size: 22px; }
+.ob .brand .logo { width: 28px; height: 28px; }
+.ob h2 { display: block; font: 700 clamp(28px, 5.6vw, 42px)/1.15 var(--display); letter-spacing: -.02em; margin: 0 0 8px; }
 .ob h2::before { display: none; }
 .ob p { color: var(--muted); margin: 0 0 24px; }
 .ob-step { display: none; animation: rise .45s cubic-bezier(.22,1,.36,1) both; }
@@ -201,6 +197,8 @@ header > div > :nth-child(2) { animation-delay: .06s; } header > div > :nth-chil
 .ob-box:focus-within { border-color: var(--y); }
 .ob-box input { flex: 1; min-width: 0; background: none; border: 0; outline: none; color: var(--ink); font: 500 19px var(--sans); padding: 8px 0; }
 .ob-box input::placeholder { color: var(--faint); }
+.ob-box input::-webkit-inner-spin-button, .ob-box input::-webkit-outer-spin-button { -webkit-appearance: none; margin: 0; }
+.ob-box input[type=number] { -moz-appearance: textfield; appearance: textfield; }
 .go { width: 44px; height: 44px; padding: 0; border-radius: 4px; border: 0; background: var(--y); color: var(--y-ink); font: 700 20px var(--mono); flex: none; box-shadow: 3px 3px 0 rgba(0,0,0,.5); }
 .go:active { transform: translate(3px,3px); box-shadow: none; }
 .ob .suggest { text-align: left; }
@@ -234,33 +232,12 @@ header > div > :nth-child(2) { animation-delay: .06s; } header > div > :nth-chil
       <rect x="1" y="4" width="6" height="1" fill="#ff5d5d"/><rect x="2" y="5" width="4" height="1" fill="#ff5d5d"/>
       <rect x="3" y="6" width="2" height="1" fill="#ff5d5d"/><rect x="0" y="7" width="3" height="1" fill="#52a7ff"/><rect x="5" y="7" width="3" height="1" fill="#8be36f"/>
     </symbol>
-    <!-- 3D axis gizmo -->
-    <symbol id="gizmo" viewBox="0 0 112 112">
-      <circle cx="56" cy="56" r="52" fill="rgba(255,255,255,.025)" stroke="rgba(255,255,255,.08)"/>
-      <g class="spin" font-family="JetBrains Mono, monospace" font-weight="700" font-size="11" text-anchor="middle">
-        <line x1="56" y1="56" x2="38" y2="72" stroke="#52a7ff" stroke-width="3" opacity=".45"/>
-        <line x1="56" y1="56" x2="74" y2="40" stroke="#52a7ff" stroke-width="3"/>
-        <line x1="56" y1="56" x2="30" y2="50" stroke="#ff5d5d" stroke-width="3" opacity=".45"/>
-        <line x1="56" y1="56" x2="88" y2="64" stroke="#ff5d5d" stroke-width="3"/>
-        <line x1="56" y1="56" x2="56" y2="84" stroke="#8be36f" stroke-width="3" opacity=".45"/>
-        <line x1="56" y1="56" x2="56" y2="20" stroke="#8be36f" stroke-width="3"/>
-        <circle cx="38" cy="72" r="5" fill="#1d2229" stroke="#52a7ff" stroke-width="2"/>
-        <circle cx="30" cy="50" r="5" fill="#1d2229" stroke="#ff5d5d" stroke-width="2"/>
-        <circle cx="56" cy="84" r="5" fill="#1d2229" stroke="#8be36f" stroke-width="2"/>
-        <circle cx="88" cy="64" r="10" fill="#ff5d5d"/><text x="88" y="68" fill="#2a0d0d">X</text>
-        <circle cx="56" cy="20" r="10" fill="#8be36f"/><text x="56" y="24" fill="#0f230a">Y</text>
-        <circle cx="74" cy="40" r="10" fill="#52a7ff"/><text x="74" y="44" fill="#08182b">Z</text>
-      </g>
-    </symbol>
   </defs>
 </svg>
-
-<div class="floor" aria-hidden="true"><div class="plane"></div></div>
 
 <div id="onboard" role="dialog" aria-modal="true" aria-label="Set up HackFinder">
   <div class="floor" aria-hidden="true"><div class="plane"></div></div>
   <div class="ob">
-    <svg class="gizmo" aria-hidden="true"><use href="#gizmo"/></svg>
     <div class="brand"><svg class="logo"><use href="#logo"/></svg>HackFinder</div>
 
     <div class="ob-step" data-step="0">
@@ -308,10 +285,9 @@ header > div > :nth-child(2) { animation-delay: .06s; } header > div > :nth-chil
   <header>
     <div>
       <div class="brand"><svg class="logo"><use href="#logo"/></svg>HackFinder</div>
-      <h1 class="greet" id="greet"><span id="greet-text">Every hackathon and game jam near you.</span><span class="cur" aria-hidden="true"></span></h1>
+      <h1 class="greet" id="greet"><span id="greet-text">Every hackathon and game jam near you.</span></h1>
       <p class="sub"><span id="greet-sub">Pulled automatically from Hack Club, Devpost, MLH and itch.io.</span><button class="edit" id="edit-profile" type="button" hidden>Not you?</button></p>
     </div>
-    <svg class="gizmo" aria-hidden="true"><use href="#gizmo"/></svg>
   </header>
 
   <div class="search panel" role="search">
@@ -338,6 +314,7 @@ header > div > :nth-child(2) { animation-delay: .06s; } header > div > :nth-chil
   <div class="toolbar" id="filters">
     <div class="group"><span class="lbl">SHOW</span>
       <button class="chip x" data-mode="near" aria-pressed="true"><span class="box"></span>In person</button>
+      <button class="chip y" data-mode="hybrid" aria-pressed="true"><span class="box"></span>Hybrid</button>
       <button class="chip z" data-mode="online" aria-pressed="true"><span class="box"></span>Online</button>
     </div>
     <div class="group"><span class="lbl">FROM</span>
@@ -367,7 +344,7 @@ header > div > :nth-child(2) { animation-delay: .06s; } header > div > :nth-chil
 
 <script>
 const $ = s => document.querySelector(s);
-const state = { events: [], here: null, radius: 100, modes: new Set(["near", "online"]),
+const state = { events: [], here: null, radius: 100, modes: new Set(["near", "hybrid", "online"]),
   srcs: new Set(["Hack Club", "Devpost", "MLH", "itch.io"]), hsOnly: false, onlineLimit: 24 };
 const SRC_CLASS = { "Hack Club": "hc", "Devpost": "dp", "MLH": "mlh", "itch.io": "itch" };
 
@@ -410,7 +387,7 @@ function card(e, prefix = "o", i = 0) {
     : e.mode === "hybrid" ? (prefix === "o" ? `Join online, or in person in ${place}` : `${place} · can also join online`)
     : place;
   const modeTag = e.mode === "hybrid" ? `<span class="tag mode">Hybrid</span>` : "";
-  const vt = i < 60 ? `view-transition-name:${prefix}${vtKey(e)};` : "";
+  const vt = i < 30 ? `view-transition-name:${prefix}${vtKey(e)};` : "";
   return `<a class="card m-${esc(e.mode)}" href="${esc(e.url)}" target="_blank" rel="noopener" style="${vt}--i:${i}">
     <div class="when">${when(e)}</div>
     <div class="name">${esc(e.name)}</div>
@@ -420,6 +397,7 @@ function card(e, prefix = "o", i = 0) {
 }
 
 function visible(e) {
+  if (!state.modes.has(e.mode === "in-person" ? "near" : e.mode)) return false;
   if (!e.sources.some(s => state.srcs.has(s.name))) return false;
   if (state.hsOnly && !(e.tags || []).includes("High school")) return false;
   return true;
@@ -444,7 +422,8 @@ function paint() {
   const byDate = (a, b) => key(a) - key(b);
 
   // In person
-  const nearSec = $("#near-sec"); nearSec.hidden = !state.modes.has("near");
+  const nearSec = $("#near-sec"); nearSec.hidden = !state.modes.has("near") && !state.modes.has("hybrid");
+  const nearIds = new Set();
   if (!state.here) {
     $("#near-title").textContent = "Near you";
     $("#near-count").textContent = "";
@@ -453,6 +432,7 @@ function paint() {
     const near = pool.filter(e => e.mode !== "online" && e.lat != null)
       .map(e => ({ ...e, _d: km(state.here, e) })).filter(e => e._d <= state.radius).sort(byDate);
     $("#near-title").textContent = `Within ${state.radius.toLocaleString()} km of ${state.here.label}`;
+    near.forEach(e => nearIds.add(e.url));
     $("#near-count").textContent = `${near.length} event${near.length === 1 ? "" : "s"}`;
     if (near.length) {
       $("#near").innerHTML = `<div class="grid">${near.map((e, i) => card(e, "n", i)).join("")}</div>`;
@@ -463,13 +443,14 @@ function paint() {
   }
 
   // Online
-  const onSec = $("#online-sec"); onSec.hidden = !state.modes.has("online");
-  const online = pool.filter(e => e.mode === "online" || e.mode === "hybrid").sort(byDate);
+  // hybrid events near you already show above, so only far-away hybrids land here
+  const onSec = $("#online-sec"); onSec.hidden = !state.modes.has("online") && !state.modes.has("hybrid");
+  const online = pool.filter(e => e.mode === "online" || (e.mode === "hybrid" && !nearIds.has(e.url))).sort(byDate);
   $("#online-count").textContent = `${online.length} event${online.length === 1 ? "" : "s"}`;
   $("#online").innerHTML = online.length
     ? `<div class="grid">${online.slice(0, state.onlineLimit).map((e, i) => card({ ...e, _d: null }, "o", i)).join("")}</div>` +
       (online.length > state.onlineLimit ? `<button class="more" id="more">Show ${Math.min(24, online.length - state.onlineLimit)} more</button>` : "")
-    : `<div class="empty">No online events match these filters.</div>`;
+    : `<div class="empty">No online or hybrid events match these filters.</div>`;
   const more = $("#more"); if (more) more.onclick = () => { state.onlineLimit += 24; render(); };
 }
 
