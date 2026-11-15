@@ -91,6 +91,10 @@
  },
  "geo": {
   "042 00, boženy němcovej 7, 042 00 košice-sever, slovakia": null,
+  "100 institute rd, worcester, ma 01609, usa": [
+   42.27432,
+   -71.80846
+  ],
   "100 queens quay w, toronto, on m5j 2g4, canada": [
    43.63798,
    -79.39078
@@ -120,6 +124,7 @@
    37.31614,
    -121.91
   ],
+  "140 w 19th ave bldg 151, columbus, oh 43210, usa": null,
   "1400 western rd, london, on n6g 2v4, canada": [
    43.01012,
    -81.27714
@@ -127,6 +132,10 @@
   "14201 briar forest dr, houston, tx 77077, usa": [
    29.75447,
    -95.6372
+  ],
+  "1900 university ave, austin, tx 78705, usa": [
+   30.28203,
+   -97.74064
   ],
   "200 s 33rd st, philadelphia, pa 19104, usa": [
    39.9524,
@@ -136,6 +145,7 @@
    40.27096,
    -74.77737
   ],
+  "21 wellesley college rd, wellesley, ma 02481, usa": null,
   "2240 university ave e, waterloo, on n2k 0g3, canada": null,
   "2240 university ave, waterloo, on n2k 0g3, canada": [
    43.51526,
@@ -149,6 +159,7 @@
    40.58376,
    -74.41571
   ],
+  "2500 chem. de polytechnique, montreal, qc h3t 1j4, canada": null,
   "3304 s quad dr, baton rouge, la 70803, usa": [
    30.40661,
    -91.17941
@@ -166,9 +177,21 @@
    38.90894,
    -77.07458
   ],
+  "400 e orange st., tempe, az 85281, usa": [
+   33.41845,
+   -111.93249
+  ],
   "400 janik dr, kent, oh 44240, usa": [
    41.15024,
    -81.34637
+  ],
+  "4000 central florida blvd, orlando, fl 32816, usa": [
+   28.59959,
+   -81.19713
+  ],
+  "401 sunset ave, windsor, on n9b 3p4, canada": [
+   42.30525,
+   -83.06458
   ],
   "405 s palmetto blvd, clemson, sc 29634, usa": [
    34.67607,
@@ -185,6 +208,10 @@
   "450 jane stanford way, stanford, ca 94305, usa": [
    37.43127,
    -122.17602
+  ],
+  "4505 s maryland pkwy, las vegas, nv 89154, usa": [
+   36.10794,
+   -115.14391
   ],
   "4802 lakeview ave, yorba linda, ca 92886, usa": [
    33.8911,
@@ -222,6 +249,10 @@
    42.39104,
    -72.5259
   ],
+  "665 commonwealth ave, boston, ma 02215, usa": [
+   42.35002,
+   -71.10311
+  ],
   "7 bayview station rd, ottawa, on k1y 2c5, canada": [
    45.40967,
    -75.72826
@@ -230,6 +261,7 @@
    32.72952,
    -97.11474
   ],
+  "72, service rd, lrde layout, doddanekundi, marathahalli, bengaluru, karnataka 560037, india": null,
   "75a chancellors cir, winnipeg, mb r3t 2n2, canada": [
    49.80904,
    -97.13292
@@ -239,9 +271,17 @@
    37.92488,
    -75.55057
   ],
+  "85 engineer's way, charlottesville, va 22903, usa": [
+   38.03175,
+   -78.51089
+  ],
   "880 tully rd, san jose, ca 95111, usa": [
    37.31139,
    -121.84088
+  ],
+  "900 oakwood st, ypsilanti, mi 48197, usa": [
+   42.24833,
+   -83.62914
   ],
   "920 pilot rd, las vegas, nv 89119, usa": [
    36.06921,
@@ -256,6 +296,10 @@
    38.80511,
    -77.04702
   ],
+  "amherst, ma, us": [
+   42.37319,
+   -72.51988
+  ],
   "at&t executive education & conference center, 1900 university ave, austin, tx 78705, usa": null,
   "atlanta, ga, us": [
    33.75447,
@@ -266,11 +310,24 @@
    11.56749
   ],
   "av fundidora, obrera, 64010 monterrey, n.l., mexico": null,
+  "badamanavarathekaval, karnataka 560082, india": null,
+  "bakı, azerbaijan": [
+   40.37559,
+   49.8328
+  ],
   "bancroft building, bethnal green, london e1 4np, uk": null,
+  "bethnal green, london e1 4np, uk": [
+   51.53035,
+   -0.05616
+  ],
   "blvd. pdte. manuel ávila camacho 261, periodista, miguel hidalgo, 11220 ciudad de méxico, cdmx, mexico": null,
   "boston, ma, us": [
    42.35883,
    -71.05783
+  ],
+  "boženy němcovej 7, 042 00 košice-sever, slovakia": [
+   48.73369,
+   21.24095
   ],
   "brooklyn, new york, us": [
    40.6526,
@@ -282,7 +339,15 @@
    11.00181,
    76.96284
   ],
+  "columbus, oh 43210, usa": [
+   39.96226,
+   -83.00071
+  ],
   "dayananda sagara educational institution, badamanavarathekaval, karnataka 560082, india": null,
+  "doddanekundi, marathahalli, bengaluru, karnataka 560037, india": [
+   12.95539,
+   77.69003
+  ],
   "durham, county durham, gb": [
    54.77701,
    -1.57562
@@ -290,6 +355,10 @@
   "durham, uk": [
    54.66667,
    -1.75
+  ],
+  "edmonton, ab t6g 2j5, canada": [
+   53.54621,
+   -113.49124
   ],
   "espoo, uusimaa, fi": [
    60.20497,
@@ -309,20 +378,34 @@
    43.25608,
    -79.87286
   ],
+  "i-12, pakistan": [
+   33.62827,
+   73.00294
+  ],
   "jaipur, rajasthan, india": [
    26.91546,
    75.81898
   ],
   "karnal sher khan shaheed rd, i-12, pakistan": null,
+  "karnataka 560082, india": [
+   12.80269,
+   77.50882
+  ],
   "kim wilcox drive n, riverside, ca 92507, usa": [
    33.97557,
    -117.32535
   ],
+  "la jolla, ca 92093, usa": [
+   32.84016,
+   -117.27408
+  ],
   "lleida, lleida, spain, es": null,
+  "lleida, spain, es": null,
   "los angeles, ca, us": [
    34.05369,
    -118.24277
   ],
+  "lrde layout, doddanekundi, marathahalli, bengaluru, karnataka 560037, india": null,
   "lulu chow wang campus center, 21 wellesley college rd, wellesley, ma 02481, usa": null,
   "main building, 110 inner campus drive, austin, tx 78705, usa": [
    30.28607,
@@ -340,13 +423,26 @@
    37.43323,
    -121.89892
   ],
+  "montreal, qc h3t 1j4, canada": [
+   45.50318,
+   -73.56981
+  ],
   "mumbai, maharashtra, india": [
    19.055,
    72.8692
   ],
+  "newfoundland and labrador / avalon peninsula, ca": null,
   "oakwood center lot, 900 oakwood st, ypsilanti, mi 48197, usa": null,
+  "obrera, 64010 monterrey, n.l., mexico": [
+   25.67782,
+   -100.29375
+  ],
   "ojone building, 72, service rd, lrde layout, doddanekundi, marathahalli, bengaluru, karnataka 560037, india": null,
   "ottawa, ontario , ca": [
+   45.42088,
+   -75.69011
+  ],
+  "ottawa, ontario, ca": [
    45.42088,
    -75.69011
   ],
@@ -355,9 +451,17 @@
    43.58657,
    -84.77634
   ],
+  "periodista, miguel hidalgo, 11220 ciudad de méxico, cdmx, mexico": [
+   19.44826,
+   -99.21878
+  ],
   "pharmaceutical sciences building, 2405 wesbrook mall, vancouver, bc v6t 1z3, canada": [
    49.26226,
    -123.24329
+  ],
+  "philadelphia, pa, usa": [
+   39.95272,
+   -75.16353
   ],
   "pleasanton, ca, usa": [
    37.66243,
@@ -376,12 +480,21 @@
    47.60383,
    -122.33006
   ],
+  "service rd, lrde layout, doddanekundi, marathahalli, bengaluru, karnataka 560037, india": null,
   "sheffield, south yorkshire, gb": [
    53.38066,
    -1.47023
   ],
+  "spain, es": [
+   40.42373,
+   -3.6899
+  ],
   "st. john's, newfoundland and labrador / avalon peninsula, ca": null,
   "student union bldg, 6138 student union blvd #2201, vancouver, bc v6t 1z1, canada": null,
+  "student union bldg, 6138 student union blvd, vancouver, bc v6t 1z1, canada": [
+   49.26743,
+   -123.25006
+  ],
   "student union building, 4505 s maryland pkwy, las vegas, nv 89154, usa": null,
   "timișoara, timiș, ro": [
    45.75384,
@@ -400,6 +513,14 @@
    49.26087,
    -123.11395
   ],
-  "washburn building, 100 institute rd, worcester, ma 01609, usa": null
+  "washburn building, 100 institute rd, worcester, ma 01609, usa": null,
+  "waterloo, on n2k 0g3, canada": [
+   43.46527,
+   -80.5223
+  ],
+  "wellesley, ma 02481, usa": [
+   42.29649,
+   -71.29256
+  ]
  }
 }
