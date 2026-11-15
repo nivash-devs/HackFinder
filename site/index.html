@@ -86,6 +86,38 @@ footer .bad { color: var(--accent); }
   .search { grid-template-columns: 1fr 1fr; }
   .search .field { grid-column: 1 / -1; }
 }
+/* ---------- motion ---------- */
+html { scroll-behavior: smooth; }
+#near-sec { view-transition-name: near-sec; }
+#online-sec { view-transition-name: online-sec; }
+::view-transition-group(*) { animation-duration: .5s; animation-timing-function: cubic-bezier(.22, 1, .36, 1); }
+::view-transition-old(root), ::view-transition-new(root) { animation-duration: .25s; }
+::view-transition-old(*):only-child { animation: vt-out .28s ease-in both; }
+::view-transition-new(*):only-child { animation: vt-in .45s cubic-bezier(.22, 1, .36, 1) .08s both; }
+@keyframes vt-out { to { opacity: 0; transform: scale(.94); filter: blur(2px); } }
+@keyframes vt-in { from { opacity: 0; transform: translateY(14px) scale(.97); } }
+body.stagger .card { animation: card-in .5s cubic-bezier(.22, 1, .36, 1) both; animation-delay: calc(min(var(--i, 0), 14) * 35ms); }
+@keyframes card-in { from { opacity: 0; transform: translateY(16px); } }
+header > * { animation: card-in .6s cubic-bezier(.22, 1, .36, 1) both; }
+header > :nth-child(2) { animation-delay: .06s; } header > :nth-child(3) { animation-delay: .12s; }
+button, .chip { transition: background-color .2s, color .2s, border-color .2s, transform .15s cubic-bezier(.22, 1, .36, 1), box-shadow .2s; }
+button:active:not(:disabled) { transform: scale(.95); }
+.chip:hover { border-color: var(--line); }
+.chip[aria-pressed="true"] { animation: pop .3s cubic-bezier(.22, 1, .36, 1); }
+@keyframes pop { 40% { transform: scale(1.08); } }
+.suggest { animation: drop .18s ease-out; transform-origin: top; }
+@keyframes drop { from { opacity: 0; transform: translateY(-6px) scaleY(.96); } }
+.card { transition: transform .2s cubic-bezier(.22, 1, .36, 1), border-color .2s, box-shadow .2s; }
+.card:hover { box-shadow: 0 10px 30px rgba(0,0,0,.10); }
+#onboard.leaving { animation: ob-out .6s cubic-bezier(.22, 1, .36, 1) forwards; pointer-events: none; }
+#onboard.leaving .ob { animation: ob-lift .6s cubic-bezier(.22, 1, .36, 1) forwards; }
+@keyframes ob-out { to { opacity: 0; } }
+@keyframes ob-lift { to { transform: translateY(-24px) scale(.98); filter: blur(4px); } }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  html { scroll-behavior: auto; }
+}
+
 /* ---------- greeting ---------- */
 .greet { font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif; font-weight: 400;
   font-size: clamp(32px, 6vw, 50px); letter-spacing: -.01em; display: flex; align-items: center; gap: 14px; margin: 22px 0 8px; }
@@ -264,13 +296,19 @@ function when(e) {
 }
 const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
 
-function card(e) {
+function vtKey(e) { // short stable id per event so the browser can follow each card as it moves
+  let h = 0; for (const c of (e.url || "") + e.name) h = (h * 31 + c.charCodeAt(0)) | 0;
+  return (h >>> 0).toString(36);
+}
+
+function card(e, prefix = "o", i = 0) {
   const srcs = e.sources.map(s => `<span class="src ${SRC_CLASS[s.name] || ""}">${esc(s.name)}</span>`).join("");
   const tags = (e.tags || []).filter(t => t !== "MLH").slice(0, 3)
     .map(t => t === "High school" && state.teen ? `<span class="tag teen">For high schoolers</span>` : `<span class="tag">${esc(t)}</span>`).join("");
   const dist = e._d != null ? `<span class="dist">${e._d < 1 ? "<1" : Math.round(e._d)} km away</span> · ` : "";
   const where = e.mode === "online" ? "Online" : (e.place || "Location TBA") + (e.mode === "hybrid" ? " · also online" : "");
-  return `<a class="card" href="${esc(e.url)}" target="_blank" rel="noopener">
+  const vt = i < 60 ? `view-transition-name:${prefix}${vtKey(e)};` : "";
+  return `<a class="card" href="${esc(e.url)}" target="_blank" rel="noopener" style="${vt}--i:${i}">
     <div class="when">${when(e)}</div>
     <div class="name">${esc(e.name)}</div>
     <div class="where">${dist}${esc(where)}</div>
@@ -284,7 +322,18 @@ function visible(e) {
   return true;
 }
 
+// Every change goes through render(). Where the browser supports View Transitions, it snapshots
+// the page, applies the change, then animates each card and section from its old spot to its new one.
+const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
+let painted = false;
 function render() {
+  const canMorph = painted && !reduceMotion && document.startViewTransition;
+  if (canMorph) { document.body.classList.remove("stagger"); document.startViewTransition(paint); }
+  else { document.body.classList.toggle("stagger", !reduceMotion); paint(); }
+  painted = true;
+}
+
+function paint() {
   const pool = state.events.filter(visible);
   // live events first (by when they end), then upcoming ones by start date
   const key = e => { const s = toDate(e.start), t = toDate(e.end, true), n = Date.now();
@@ -303,7 +352,7 @@ function render() {
     $("#near-title").textContent = `Within ${state.radius.toLocaleString()} km of ${state.here.label}`;
     $("#near-count").textContent = `${near.length} event${near.length === 1 ? "" : "s"}`;
     if (near.length) {
-      $("#near").innerHTML = `<div class="grid">${near.map(card).join("")}</div>`;
+      $("#near").innerHTML = `<div class="grid">${near.map((e, i) => card(e, "n", i)).join("")}</div>`;
     } else {
       const closest = pool.filter(e => e.mode !== "online" && e.lat != null).map(e => ({ ...e, _d: km(state.here, e) })).sort((a, b) => a._d - b._d)[0];
       $("#near").innerHTML = `<div class="empty">Nothing in this radius right now.${closest ? ` The closest one is <b>${esc(closest.name)}</b>, ${Math.round(closest._d).toLocaleString()} km away. Try a bigger radius.` : ""}</div>`;
@@ -315,7 +364,7 @@ function render() {
   const online = pool.filter(e => e.mode === "online" || e.mode === "hybrid").sort(byDate);
   $("#online-count").textContent = `${online.length} event${online.length === 1 ? "" : "s"}`;
   $("#online").innerHTML = online.length
-    ? `<div class="grid">${online.slice(0, state.onlineLimit).map(e => card({ ...e, _d: null })).join("")}</div>` +
+    ? `<div class="grid">${online.slice(0, state.onlineLimit).map((e, i) => card({ ...e, _d: null }, "o", i)).join("")}</div>` +
       (online.length > state.onlineLimit ? `<button class="more" id="more">Show ${Math.min(24, online.length - state.onlineLimit)} more</button>` : "")
     : `<div class="empty">No online events match these filters.</div>`;
   const more = $("#more"); if (more) more.onclick = () => { state.onlineLimit += 24; render(); };
@@ -485,9 +534,10 @@ function runOnboarding() {
 
     ob.querySelectorAll(".pick").forEach(b => b.onclick = () => {
       p.interest = b.dataset.int;
-      ob.classList.remove("show");
+      ob.classList.add("leaving");
       document.body.style.overflow = "";
       done(p);
+      setTimeout(() => ob.classList.remove("show", "leaving"), reduceMotion ? 0 : 650);
     });
   });
 }
