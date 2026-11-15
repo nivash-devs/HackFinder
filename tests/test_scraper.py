@@ -43,7 +43,9 @@ ITCH_UPCOMING = '''<div class="jam"><div class="padded_content"><div class="jam_
 ITCH_RUNNING = '''<div class="jam"><div class="padded_content"><h3><a href="/jam/old">Old Jam</a></h3>
 <div class="timestmap meta_row"><strong>Ends in <span title="2020-01-01 00:00:00" class="date_countdown">x</span></strong></div></div></div>
 <div class="jam"><div class="padded_content"><h3><a href="/jam/live">Live Jam</a></h3>
-<div class="timestmap meta_row">Submission closes in <span class="date_countdown">11 hours</span></div></div></div>'''
+<div class="timestmap meta_row">Submission closes in <span class="date_countdown">11 hours</span></div></div></div>
+<div class="jam"><div class="padded_content"><h3><a href="/jam/raw">Raw Jam</a></h3>
+<div class="timestmap meta_row">Submission closes in <span class="date_countdown">2026-11-16T01:59:00Z</span></div></div></div>'''
 
 
 class Resp:
@@ -102,7 +104,8 @@ def test_sources():
     assert ml[0]["name"] == "HackUTA" and ml[0]["place"] == "Arlington, Texas, US"
     it = list(fe.from_itch(c, today=dt.date(2026, 11, 15)))
     names = [e["name"] for e in it]
-    assert names == ["GMTK Game Jam 2027", "Live Jam"], names
+    assert names == ["GMTK Game Jam 2027", "Live Jam", "Raw Jam"], names
+    assert it[2]["end"] == "2026-11-16T01:59:00Z"
     assert it[0]["start"] == "2027-08-11T17:00:00Z" and it[0]["end"] == "2027-08-15T17:00:00Z"
     assert "2,042 joined" in it[0]["extra"]
     assert it[1]["end"] == "2026-11-15T11:00:00Z" and it[1]["start"] is None
