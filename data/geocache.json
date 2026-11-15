@@ -1,1 +1,405 @@
-{"geo": {}, "devpost_address": {}}
+{
+ "devpost_address": {
+  "https://adahacks-2027.devpost.com/": "11308 89 Ave NW, Edmonton, AB T6G 2J5, Canada",
+  "https://ai-usc.devpost.com/": "1031 Downey Way, Los Angeles, CA 90089, USA",
+  "https://aichr-space.devpost.com/": "5555 Greenwich Rd, Virginia Beach, VA 23462, USA",
+  "https://bearhacks2027.devpost.com/": "4180 Duke of York Blvd, Mississauga, ON L5B 0G5, Canada",
+  "https://bharat-builds-tour.devpost.com/": "Jaipur, Rajasthan, India",
+  "https://bisv-hacks-2027.devpost.com/": "1290 Parkmoor Ave, San Jose, CA 95126, USA",
+  "https://blackout-2026.devpost.com/": "Coimbatore, Tamil Nadu, India",
+  "https://build-day.devpost.com/": "Durham, UK",
+  "https://business-battkefuekd.devpost.com/": "4802 Lakeview Ave, Yorba Linda, CA 92886, USA",
+  "https://central-hacks.devpost.com/": "Pearce Hall, Mt Pleasant, MI 48858, USA",
+  "https://checkpoint-journeys-hanoi.devpost.com/": "Khu đô thị Mỗ Lao, Hà Đông, Hà Nội, Vietnam",
+  "https://civic-hacks-2027-32027.devpost.com/": "Center for Computing & Data Sciences Boston University, 665 Commonwealth Ave, Boston, MA 02215, USA",
+  "https://cutie-hack-2026.devpost.com/": "Kim Wilcox Drive N, Riverside, CA 92507, USA",
+  "https://datathon-polyfinances-bnc-aws.devpost.com/": "Pavillons Pierre-Lassonde et Claudette McKay-Lassonde, 2500 Chem. de Polytechnique, Montreal, QC H3T 1J4, Canada",
+  "https://desert-dev-lab-2027.devpost.com/": "609 Broadway Blvd NE, Albuquerque, NM 87102, USA",
+  "https://design-at-ut-designathon-2026.devpost.com/": "Main Building, 110 Inner Campus Drive, Austin, TX 78705, USA",
+  "https://developerweek-2027-hackathon.devpost.com/": "5001 Great America Pkwy, Santa Clara, CA 95054, USA",
+  "https://developerweek-new-york-2027.devpost.com/": "355 Plaza Dr, Secaucus, NJ 07094, USA",
+  "https://devfest-ai-hackathon.devpost.com/": "Aegidiistraße 70, 48143 Münster, Germany",
+  "https://devhacks-2027.devpost.com/": "75A Chancellors Cir, Winnipeg, MB R3T 2N2, Canada",
+  "https://devhacks2026.devpost.com/": "Fontana Laboratories, 140 W 19th Ave bldg 151, Columbus, OH 43210, USA",
+  "https://devnetwork-api-hackathon-2027.devpost.com/": "5001 Great America Pkwy, Santa Clara, CA 95054, USA",
+  "https://dtit-hackathon-2026.devpost.com/": "042 00, Boženy Němcovej 7, 042 00 Košice-Sever, Slovakia",
+  "https://eaglehacks2027.devpost.com/": "11098 Fgcu Blvd N, Fort Myers, FL 33965, USA",
+  "https://ese1110f26.devpost.com/": "200 S 33rd St, Philadelphia, PA 19104, USA",
+  "https://ese4500f26.devpost.com/": "3317 Chestnut St Bridge, Philadelphia, PA, USA",
+  "https://firebird-hacks-32077.devpost.com/": "8210 Lankford Hwy, Oak Hall, VA 23416, USA",
+  "https://forgehacks-biztech.devpost.com/": "Pharmaceutical Sciences Building, 2405 Wesbrook Mall, Vancouver, BC V6T 1Z3, Canada",
+  "https://futureforge-hacks.devpost.com/": "Pleasanton, CA, USA",
+  "https://goathacks-2027.devpost.com/": "Washburn Building, 100 Institute Rd, Worcester, MA 01609, USA",
+  "https://gtransformer-buildathon-2026.devpost.com/": "Milpitas, CA, USA",
+  "https://h-a-r-d-hack-2027.devpost.com/": "9736 Engineers Ln, La Jolla, CA 92093, USA",
+  "https://hack-a-ton-with-friends.devpost.com/": "11762 106 St, Edmonton, AB T5G 3H6, Canada",
+  "https://hack-peel.devpost.com/": "3225 Erindale Station Rd, Mississauga, ON L5C 1Y5, Canada",
+  "https://hack-the-harvest.devpost.com/": "4480 2nd Ave, Sacramento, CA 95817, USA",
+  "https://hack-the-nest.devpost.com/": "Oakwood Center Lot, 900 Oakwood St, Ypsilanti, MI 48197, USA",
+  "https://hack-western-13.devpost.com/": "1400 Western Rd, London, ON N6G 2V4, Canada",
+  "https://hackai-toronto.devpost.com/": "100 Queens Quay W, Toronto, ON M5J 2G4, Canada",
+  "https://hackstorm3.devpost.com/": "San Francisco, CA, USA",
+  "https://hacksussex-gamejam-2026.devpost.com/": "Falmer, Brighton, UK",
+  "https://hacktcnj-2027.devpost.com/": "2000 Pennington Rd, Ewing Township, NJ 08618, USA",
+  "https://hackumass-xiv.devpost.com/": "650 N Pleasant St, Amherst, MA 01002, USA",
+  "https://hackuta-8.devpost.com/": "701 S Nedderman Dr, Arlington, TX 76019, USA",
+  "https://hackva27.devpost.com/": "Food Services Building, 8451 Lake Dr, Annandale, VA 22003, USA",
+  "https://haven-las-vegas.devpost.com/": "920 Pilot Rd, Las Vegas, NV 89119, USA",
+  "https://haven-seattle.devpost.com/": "Seattle, WA, USA",
+  "https://hook-em-hacks-2027.devpost.com/": "Main Building, 110 Inner Campus Drive, Austin, TX 78705, USA",
+  "https://hoya-hacks-2027.devpost.com/": "3700 O St NW, Washington, DC 20057, USA",
+  "https://immerse-the-bay-2026.devpost.com/": "450 Jane Stanford Way, Stanford, CA 94305, USA",
+  "https://innovate-in-windsor-hackathon.devpost.com/": "Chrysler Hall Tower, 401 Sunset Ave, Windsor, ON N9B 3P4, Canada",
+  "https://k-dub-hacks.devpost.com/": "2240 University Ave, Waterloo, ON N2K 0G3, Canada",
+  "https://kaya-ai-grand-challenge.devpost.com/": "Mumbai, Maharashtra, India",
+  "https://khe-2027.devpost.com/": "400 Janik Dr, Kent, OH 44240, USA",
+  "https://loohacks.devpost.com/": "2240 University Ave E, Waterloo, ON N2K 0G3, Canada",
+  "https://loop.devpost.com/": "Student Union Bldg, 6138 Student Union Blvd #2201, Vancouver, BC V6T 1Z1, Canada",
+  "https://lumahacks.devpost.com/": "H2, 4000 Central Florida Blvd, Orlando, FL 32816, USA",
+  "https://madhacks-fall-2026.devpost.com/": "1205 University Ave, Madison, WI 53706, USA",
+  "https://nsh-rpi-2027.devpost.com/": "51 College Ave, Troy, NY 12180, USA",
+  "https://ntu-beyond-binary-2027.devpost.com/": "50 Nanyang Ave, Singapore 639798",
+  "https://nutech-hackfest-2026.devpost.com/": "Karnal Sher Khan Shaheed Rd, I-12, Pakistan",
+  "https://ocsefhacks3.devpost.com/": "14325 Goldenwest St, Westminster, CA 92683, USA",
+  "https://onhacks.devpost.com/": "206 Beverley St, Toronto, ON M5T 1Z3, Canada",
+  "https://openbio-datathon.devpost.com/": "Maxwell-Dworkin, 33 Oxford St, Cambridge, MA 02138, USA",
+  "https://opportunity-hack-2026-arizona.devpost.com/": "501 E Tyler Mall, Tempe, AZ 85281, USA",
+  "https://pixel-forge-gamethon.devpost.com/": "Dayananda Sagara Educational Institution, Badamanavarathekaval, Karnataka 560082, India",
+  "https://project-zh.devpost.com/": "79 Z.Nudiraliyev str, Bakı, Azerbaijan",
+  "https://rebelhacks-2027.devpost.com/": "Student Union Building, 4505 S Maryland Pkwy, Las Vegas, NV 89154, USA",
+  "https://revolution-mty2026.devpost.com/": "Av Fundidora, Obrera, 64010 Monterrey, N.L., Mexico",
+  "https://sand-hacks-26.devpost.com/": "9736 Engineers Ln, La Jolla, CA 92093, USA",
+  "https://sandbox-test-2.devpost.com/": "10504 Princess Elizabeth Ave NW, Edmonton, AB T5G 3K4, Canada",
+  "https://sc-quantathon-v4.devpost.com/": "405 S Palmetto Blvd, Clemson, SC 29634, USA",
+  "https://spartahack-12.devpost.com/": "642 Red Cedar Rd, East Lansing, MI 48824, USA",
+  "https://start-hack-league-munich-2026.devpost.com/": "Audimax, Maxvorstadt, 80333 München, Germany",
+  "https://stupideas-ottawa-f26.devpost.com/": "7 Bayview Station Rd, Ottawa, ON K1Y 2C5, Canada",
+  "https://sunhacks-2026.devpost.com/": "Undergraduate Academic Services Building, 400 E Orange St., Tempe, AZ 85281, USA",
+  "https://svchackathon2027.devpost.com/": "2405 E College Way, Mount Vernon, WA 98273, USA",
+  "https://tbd-hackathon.devpost.com/": "3401 Grays Ferry Ave, Philadelphia, PA 19146, USA",
+  "https://techtotreasure.devpost.com/": "880 Tully Rd, San Jose, CA 95111, USA",
+  "https://theagent-to-agent-hackathon.devpost.com/": "OJone Building, 72, Service Rd, LRDE Layout, Doddanekundi, Marathahalli, Bengaluru, Karnataka 560037, India",
+  "https://ticket-to-hack.devpost.com/": "Rice Hall Information Technology Engineering Building, 85 Engineer's Way, Charlottesville, VA 22903, USA",
+  "https://ubc-hackathon-2026.devpost.com/": "AT&T Executive Education & Conference Center, 1900 University Ave, Austin, TX 78705, USA",
+  "https://vibeathon-mexico-2026.devpost.com/": "Blvd. Pdte. Manuel Ávila Camacho 261, Periodista, Miguel Hidalgo, 11220 Ciudad de México, CDMX, Mexico",
+  "https://vibecode-animated-maps.devpost.com/": "2484 Plainfield Ave, South Plainfield, NJ 07080, USA",
+  "https://wellesleyhack-2026.devpost.com/": "Lulu Chow Wang Campus Center, 21 Wellesley College Rd, Wellesley, MA 02481, USA",
+  "https://whs-build.devpost.com/": "14201 Briar Forest Dr, Houston, TX 77077, USA",
+  "https://wics-geaux-hack-2027.devpost.com/": "3304 S Quad Dr, Baton Rouge, LA 70803, USA",
+  "https://wohack.devpost.com/": "Bancroft Building, Bethnal Green, London E1 4NP, UK",
+  "https://youtube-automation-hackathon.devpost.com/": "Vancouver, BC, Canada"
+ },
+ "geo": {
+  "042 00, boženy němcovej 7, 042 00 košice-sever, slovakia": null,
+  "100 queens quay w, toronto, on m5j 2g4, canada": [
+   43.63798,
+   -79.39078
+  ],
+  "1031 downey way, los angeles, ca 90089, usa": [
+   34.01923,
+   -118.28504
+  ],
+  "10504 princess elizabeth ave nw, edmonton, ab t5g 3k4, canada": [
+   53.56719,
+   -113.50169
+  ],
+  "11098 fgcu blvd n, fort myers, fl 33965, usa": [
+   26.46519,
+   -81.77018
+  ],
+  "11308 89 ave nw, edmonton, ab t6g 2j5, canada": null,
+  "11762 106 st, edmonton, ab t5g 3h6, canada": [
+   53.57007,
+   -113.50174
+  ],
+  "1205 university ave, madison, wi 53706, usa": [
+   43.0728,
+   -89.40685
+  ],
+  "1290 parkmoor ave, san jose, ca 95126, usa": [
+   37.31614,
+   -121.91
+  ],
+  "1400 western rd, london, on n6g 2v4, canada": [
+   43.01012,
+   -81.27714
+  ],
+  "14201 briar forest dr, houston, tx 77077, usa": [
+   29.75447,
+   -95.6372
+  ],
+  "200 s 33rd st, philadelphia, pa 19104, usa": [
+   39.9524,
+   -75.19049
+  ],
+  "2000 pennington rd, ewing township, nj 08618, usa": [
+   40.27096,
+   -74.77737
+  ],
+  "2240 university ave e, waterloo, on n2k 0g3, canada": null,
+  "2240 university ave, waterloo, on n2k 0g3, canada": [
+   43.51526,
+   -80.51361
+  ],
+  "2405 e college way, mount vernon, wa 98273, usa": [
+   48.43769,
+   -122.31015
+  ],
+  "2484 plainfield ave, south plainfield, nj 07080, usa": [
+   40.58376,
+   -74.41571
+  ],
+  "3304 s quad dr, baton rouge, la 70803, usa": [
+   30.40661,
+   -91.17941
+  ],
+  "3317 chestnut st bridge, philadelphia, pa, usa": null,
+  "3401 grays ferry ave, philadelphia, pa 19146, usa": [
+   39.94025,
+   -75.19979
+  ],
+  "355 plaza dr, secaucus, nj 07094, usa": [
+   40.78833,
+   -74.04222
+  ],
+  "3700 o st nw, washington, dc 20057, usa": [
+   38.90894,
+   -77.07458
+  ],
+  "400 janik dr, kent, oh 44240, usa": [
+   41.15024,
+   -81.34637
+  ],
+  "405 s palmetto blvd, clemson, sc 29634, usa": [
+   34.67607,
+   -82.83689
+  ],
+  "4180 duke of york blvd, mississauga, on l5b 0g5, canada": [
+   43.5912,
+   -79.6481
+  ],
+  "4480 2nd ave, sacramento, ca 95817, usa": [
+   38.55092,
+   -121.45389
+  ],
+  "450 jane stanford way, stanford, ca 94305, usa": [
+   37.43127,
+   -122.17602
+  ],
+  "4802 lakeview ave, yorba linda, ca 92886, usa": [
+   33.8911,
+   -117.81078
+  ],
+  "50 nanyang ave, singapore 639798": [
+   1.34703,
+   103.68209
+  ],
+  "5001 great america pkwy, santa clara, ca 95054, usa": [
+   37.4044,
+   -121.97505
+  ],
+  "501 e tyler mall, tempe, az 85281, usa": [
+   33.42004,
+   -111.9321
+  ],
+  "51 college ave, troy, ny 12180, usa": [
+   42.72912,
+   -73.67931
+  ],
+  "5555 greenwich rd, virginia beach, va 23462, usa": [
+   36.84252,
+   -76.17887
+  ],
+  "609 broadway blvd ne, albuquerque, nm 87102, usa": [
+   35.089,
+   -106.64419
+  ],
+  "642 red cedar rd, east lansing, mi 48824, usa": [
+   42.72627,
+   -84.4824
+  ],
+  "650 n pleasant st, amherst, ma 01002, usa": [
+   42.39104,
+   -72.5259
+  ],
+  "7 bayview station rd, ottawa, on k1y 2c5, canada": [
+   45.40967,
+   -75.72826
+  ],
+  "701 s nedderman dr, arlington, tx 76019, usa": [
+   32.72952,
+   -97.11474
+  ],
+  "75a chancellors cir, winnipeg, mb r3t 2n2, canada": [
+   49.80904,
+   -97.13292
+  ],
+  "79 z.nudiraliyev str, bakı, azerbaijan": null,
+  "8210 lankford hwy, oak hall, va 23416, usa": [
+   37.92488,
+   -75.55057
+  ],
+  "880 tully rd, san jose, ca 95111, usa": [
+   37.31139,
+   -121.84088
+  ],
+  "920 pilot rd, las vegas, nv 89119, usa": [
+   36.06921,
+   -115.15838
+  ],
+  "9736 engineers ln, la jolla, ca 92093, usa": null,
+  "aegidiistraße 70, 48143 münster, germany": [
+   51.95989,
+   7.62327
+  ],
+  "alexandria, virginia, us": [
+   38.80511,
+   -77.04702
+  ],
+  "at&t executive education & conference center, 1900 university ave, austin, tx 78705, usa": null,
+  "atlanta, ga, us": [
+   33.75447,
+   -84.38982
+  ],
+  "audimax, maxvorstadt, 80333 münchen, germany": [
+   48.14948,
+   11.56749
+  ],
+  "av fundidora, obrera, 64010 monterrey, n.l., mexico": null,
+  "bancroft building, bethnal green, london e1 4np, uk": null,
+  "blvd. pdte. manuel ávila camacho 261, periodista, miguel hidalgo, 11220 ciudad de méxico, cdmx, mexico": null,
+  "boston, ma, us": [
+   42.35883,
+   -71.05783
+  ],
+  "brooklyn, new york, us": [
+   40.6526,
+   -73.94972
+  ],
+  "center for computing & data sciences boston university, 665 commonwealth ave, boston, ma 02215, usa": null,
+  "chrysler hall tower, 401 sunset ave, windsor, on n9b 3p4, canada": null,
+  "coimbatore, tamil nadu, india": [
+   11.00181,
+   76.96284
+  ],
+  "dayananda sagara educational institution, badamanavarathekaval, karnataka 560082, india": null,
+  "durham, county durham, gb": [
+   54.77701,
+   -1.57562
+  ],
+  "durham, uk": [
+   54.66667,
+   -1.75
+  ],
+  "espoo, uusimaa, fi": [
+   60.20497,
+   24.65598
+  ],
+  "falmer, brighton, uk": [
+   50.86202,
+   -0.08735
+  ],
+  "fontana laboratories, 140 w 19th ave bldg 151, columbus, oh 43210, usa": null,
+  "food services building, 8451 lake dr, annandale, va 22003, usa": [
+   38.83457,
+   -77.23587
+  ],
+  "h2, 4000 central florida blvd, orlando, fl 32816, usa": null,
+  "hamilton, ontario, ca": [
+   43.25608,
+   -79.87286
+  ],
+  "jaipur, rajasthan, india": [
+   26.91546,
+   75.81898
+  ],
+  "karnal sher khan shaheed rd, i-12, pakistan": null,
+  "kim wilcox drive n, riverside, ca 92507, usa": [
+   33.97557,
+   -117.32535
+  ],
+  "lleida, lleida, spain, es": null,
+  "los angeles, ca, us": [
+   34.05369,
+   -118.24277
+  ],
+  "lulu chow wang campus center, 21 wellesley college rd, wellesley, ma 02481, usa": null,
+  "main building, 110 inner campus drive, austin, tx 78705, usa": [
+   30.28607,
+   -97.73935
+  ],
+  "manhattan, kansas, us": [
+   39.18361,
+   -96.57167
+  ],
+  "maxwell-dworkin, 33 oxford st, cambridge, ma 02138, usa": [
+   42.37879,
+   -71.11731
+  ],
+  "milpitas, ca, usa": [
+   37.43323,
+   -121.89892
+  ],
+  "mumbai, maharashtra, india": [
+   19.055,
+   72.8692
+  ],
+  "oakwood center lot, 900 oakwood st, ypsilanti, mi 48197, usa": null,
+  "ojone building, 72, service rd, lrde layout, doddanekundi, marathahalli, bengaluru, karnataka 560037, india": null,
+  "ottawa, ontario , ca": [
+   45.42088,
+   -75.69011
+  ],
+  "pavillons pierre-lassonde et claudette mckay-lassonde, 2500 chem. de polytechnique, montreal, qc h3t 1j4, canada": null,
+  "pearce hall, mt pleasant, mi 48858, usa": [
+   43.58657,
+   -84.77634
+  ],
+  "pharmaceutical sciences building, 2405 wesbrook mall, vancouver, bc v6t 1z3, canada": [
+   49.26226,
+   -123.24329
+  ],
+  "pleasanton, ca, usa": [
+   37.66243,
+   -121.87468
+  ],
+  "princeton, new jersey, us": [
+   40.3497,
+   -74.65974
+  ],
+  "rice hall information technology engineering building, 85 engineer's way, charlottesville, va 22903, usa": null,
+  "san francisco, ca, usa": [
+   37.78794,
+   -122.40752
+  ],
+  "seattle, wa, usa": [
+   47.60383,
+   -122.33006
+  ],
+  "sheffield, south yorkshire, gb": [
+   53.38066,
+   -1.47023
+  ],
+  "st. john's, newfoundland and labrador / avalon peninsula, ca": null,
+  "student union bldg, 6138 student union blvd #2201, vancouver, bc v6t 1z1, canada": null,
+  "student union building, 4505 s maryland pkwy, las vegas, nv 89154, usa": null,
+  "timișoara, timiș, ro": [
+   45.75384,
+   21.22575
+  ],
+  "toronto, ontario, ca": [
+   43.65348,
+   -79.38393
+  ],
+  "undergraduate academic services building, 400 e orange st., tempe, az 85281, usa": null,
+  "vancouver, bc, canada": [
+   49.26087,
+   -123.11395
+  ],
+  "vancouver, british columbia, ca": [
+   49.26087,
+   -123.11395
+  ],
+  "washburn building, 100 institute rd, worcester, ma 01609, usa": null
+ }
+}
