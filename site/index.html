@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HackFinder</title>
+<meta name="description" content="Every hackathon and game jam near you, pulled from Hack Club, Devpost, MLH and itch.io.">
+<style>
+:root {
+  --bg: #f6f5f1; --panel: #ffffff; --ink: #17171c; --muted: #66667a; --line: #e4e2da;
+  --accent: #ff5a36; --accent-ink: #ffffff; --chip: #efede6; --chip-on: #17171c; --chip-on-ink: #ffffff;
+  --hc: #ec3750; --dp: #003e54; --mlh: #1d539f; --itch: #fa5c5c; --good: #1f9d55;
+  --shadow: 0 1px 2px rgba(0,0,0,.04), 0 4px 16px rgba(0,0,0,.05);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #111114; --panel: #1b1b20; --ink: #f1f0ec; --muted: #9a9aab; --line: #2c2c34;
+    --chip: #26262d; --chip-on: #f1f0ec; --chip-on-ink: #111114; --dp: #4fb3d9; --mlh: #6d9cf0;
+    --shadow: none;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #111114; --panel: #1b1b20; --ink: #f1f0ec; --muted: #9a9aab; --line: #2c2c34;
+  --chip: #26262d; --chip-on: #f1f0ec; --chip-on-ink: #111114; --dp: #4fb3d9; --mlh: #6d9cf0;
+  --shadow: none;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink);
+  font: 16px/1.5 ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+a { color: inherit; }
+.wrap { max-width: 980px; margin: 0 auto; padding: 0 16px; }
+
+header { padding: 40px 0 24px; }
+.brand { display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 15px; letter-spacing: .02em; }
+.dot { width: 12px; height: 12px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent) 25%, transparent); }
+h1 { font-size: clamp(30px, 6vw, 48px); line-height: 1.05; margin: 18px 0 10px; letter-spacing: -.03em; }
+.sub { color: var(--muted); margin: 0; max-width: 560px; }
+
+.search { background: var(--panel); border: 1px solid var(--line); border-radius: 16px; padding: 14px; box-shadow: var(--shadow);
+  display: grid; grid-template-columns: 1fr auto auto; gap: 10px; position: sticky; top: 8px; z-index: 5; }
+.field { position: relative; }
+input[type=text], select { width: 100%; font: inherit; color: var(--ink); background: var(--bg); border: 1px solid var(--line);
+  border-radius: 10px; padding: 11px 12px; outline: none; }
+input[type=text]:focus, select:focus { border-color: var(--accent); }
+button { font: inherit; cursor: pointer; border-radius: 10px; border: 1px solid var(--line); background: var(--bg); color: var(--ink); padding: 11px 14px; white-space: nowrap; }
+button.primary { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); font-weight: 600; }
+.suggest { position: absolute; left: 0; right: 0; top: calc(100% + 6px); background: var(--panel); border: 1px solid var(--line);
+  border-radius: 12px; box-shadow: var(--shadow); overflow: hidden; display: none; }
+.suggest button { display: block; width: 100%; text-align: left; border: 0; border-radius: 0; background: none; padding: 10px 12px; }
+.suggest button:hover, .suggest button:focus { background: var(--chip); outline: none; }
+.suggest small { color: var(--muted); }
+
+.filters { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0 6px; align-items: center; }
+.chip { border-radius: 999px; padding: 6px 12px; font-size: 14px; background: var(--chip); border: 1px solid transparent; }
+.chip[aria-pressed="true"] { background: var(--chip-on); color: var(--chip-on-ink); }
+.sep { width: 1px; height: 22px; background: var(--line); margin: 0 4px; }
+.status { color: var(--muted); font-size: 14px; margin: 6px 0 0; min-height: 21px; }
+
+section { margin: 30px 0; }
+.sec-head { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; margin-bottom: 12px; }
+h2 { font-size: 20px; margin: 0; letter-spacing: -.01em; }
+.count { color: var(--muted); font-size: 14px; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 12px; }
+.card { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 16px; display: flex; flex-direction: column; gap: 8px;
+  text-decoration: none; box-shadow: var(--shadow); transition: transform .12s ease, border-color .12s ease; min-width: 0; }
+.card:hover { transform: translateY(-2px); border-color: var(--accent); }
+.when { font-size: 13px; font-weight: 700; color: var(--accent); text-transform: uppercase; letter-spacing: .04em; }
+.name { font-size: 17px; font-weight: 700; line-height: 1.25; overflow-wrap: anywhere; }
+.where { color: var(--muted); font-size: 14px; overflow-wrap: anywhere; }
+.dist { color: var(--ink); font-weight: 600; }
+.meta { display: flex; flex-wrap: wrap; gap: 6px; margin-top: auto; padding-top: 4px; }
+.tag { font-size: 12px; padding: 2px 8px; border-radius: 999px; background: var(--chip); color: var(--muted); }
+.src { font-size: 12px; padding: 2px 8px; border-radius: 999px; color: #fff; font-weight: 600; }
+.src.hc { background: var(--hc); } .src.dp { background: var(--dp); } .src.mlh { background: var(--mlh); } .src.itch { background: var(--itch); }
+:root[data-theme="dark"] .src.dp, :root[data-theme="dark"] .src.mlh { color: #111; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .src.dp, :root:not([data-theme="light"]) .src.mlh { color: #111; } }
+.live { color: var(--good); }
+.empty { border: 1px dashed var(--line); border-radius: 14px; padding: 28px; text-align: center; color: var(--muted); }
+.more { margin: 14px auto 0; display: block; }
+footer { color: var(--muted); font-size: 13px; padding: 30px 0 50px; border-top: 1px solid var(--line); margin-top: 40px; }
+footer .bad { color: var(--accent); }
+
+@media (max-width: 640px) {
+  header { padding-top: 28px; }
+  .search { grid-template-columns: 1fr 1fr; }
+  .search .field { grid-column: 1 / -1; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="brand"><span class="dot"></span>HackFinder</div>
+    <h1>Every hackathon and game jam near you.</h1>
+    <p class="sub">Pulled automatically from Hack Club, Devpost, MLH and itch.io. Nobody has to post anything twice.</p>
+  </header>
+
+  <div class="search" role="search">
+    <div class="field">
+      <input id="loc" type="text" placeholder="Type a city, like Bangalore or Seattle" autocomplete="off" aria-label="Your city">
+      <div id="suggest" class="suggest" role="listbox"></div>
+    </div>
+    <select id="radius" aria-label="Search radius">
+      <option value="25">25 km</option>
+      <option value="50">50 km</option>
+      <option value="100" selected>100 km</option>
+      <option value="250">250 km</option>
+      <option value="500">500 km</option>
+      <option value="1500">1,500 km</option>
+    </select>
+    <button id="gps" class="primary" type="button">Use my location</button>
+  </div>
+
+  <div class="filters" id="filters">
+    <button class="chip" data-mode="near" aria-pressed="true">In person</button>
+    <button class="chip" data-mode="online" aria-pressed="true">Online</button>
+    <span class="sep"></span>
+    <button class="chip" data-src="Hack Club" aria-pressed="true">Hack Club</button>
+    <button class="chip" data-src="Devpost" aria-pressed="true">Devpost</button>
+    <button class="chip" data-src="MLH" aria-pressed="true">MLH</button>
+    <button class="chip" data-src="itch.io" aria-pressed="true">itch.io jams</button>
+    <span class="sep"></span>
+    <button class="chip" data-hs aria-pressed="false">High school only</button>
+  </div>
+  <p class="status" id="status" aria-live="polite">Loading events…</p>
+
+  <section id="near-sec">
+    <div class="sec-head"><h2 id="near-title">Near you</h2><span class="count" id="near-count"></span></div>
+    <div id="near"></div>
+  </section>
+
+  <section id="online-sec">
+    <div class="sec-head"><h2>Online</h2><span class="count" id="online-count"></span></div>
+    <div id="online"></div>
+  </section>
+
+  <footer id="foot"></footer>
+</div>
+
+<script>
+const $ = s => document.querySelector(s);
+const state = { events: [], here: null, radius: 100, modes: new Set(["near", "online"]),
+  srcs: new Set(["Hack Club", "Devpost", "MLH", "itch.io"]), hsOnly: false, onlineLimit: 24 };
+const SRC_CLASS = { "Hack Club": "hc", "Devpost": "dp", "MLH": "mlh", "itch.io": "itch" };
+
+const store = {
+  get(k) { try { return JSON.parse(localStorage.getItem(k)); } catch { return null; } },
+  set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch {} }
+};
+
+function km(a, b) { // great-circle distance (haversine)
+  const R = 6371, r = x => x * Math.PI / 180;
+  const dLat = r(b.lat - a.lat), dLng = r(b.lng - a.lng);
+  const h = Math.sin(dLat / 2) ** 2 + Math.cos(r(a.lat)) * Math.cos(r(b.lat)) * Math.sin(dLng / 2) ** 2;
+  return 2 * R * Math.asin(Math.sqrt(h));
+}
+const toDate = s => s ? new Date(s.length === 10 ? s + "T12:00:00" : s) : null;
+const fmtDay = d => d.toLocaleDateString(undefined, { month: "short", day: "numeric" });
+function when(e) {
+  const s = toDate(e.start), t = toDate(e.end), now = new Date();
+  if (s && s <= now && t && t >= now) return `<span class="live">Happening now</span> · ends ${fmtDay(t)}`;
+  if (!s && t) return `Ends ${fmtDay(t)}${t.getFullYear() !== now.getFullYear() ? ", " + t.getFullYear() : ""}`;
+  if (!s) return "Date TBA";
+  if (!t || fmtDay(s) === fmtDay(t)) return fmtDay(s) + (s.getFullYear() !== now.getFullYear() ? ", " + s.getFullYear() : "");
+  const same = s.getMonth() === t.getMonth() && s.getFullYear() === t.getFullYear();
+  return `${fmtDay(s)} - ${same ? t.getDate() : fmtDay(t)}${t.getFullYear() !== now.getFullYear() ? ", " + t.getFullYear() : ""}`;
+}
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+
+function card(e) {
+  const srcs = e.sources.map(s => `<span class="src ${SRC_CLASS[s.name] || ""}">${esc(s.name)}</span>`).join("");
+  const tags = (e.tags || []).filter(t => t !== "MLH").slice(0, 3).map(t => `<span class="tag">${esc(t)}</span>`).join("");
+  const dist = e._d != null ? `<span class="dist">${e._d < 1 ? "<1" : Math.round(e._d)} km away</span> · ` : "";
+  const where = e.mode === "online" ? "Online" : (e.place || "Location TBA") + (e.mode === "hybrid" ? " · also online" : "");
+  return `<a class="card" href="${esc(e.url)}" target="_blank" rel="noopener">
+    <div class="when">${when(e)}</div>
+    <div class="name">${esc(e.name)}</div>
+    <div class="where">${dist}${esc(where)}</div>
+    ${e.extra ? `<div class="where">${esc(e.extra)}</div>` : ""}
+    <div class="meta">${srcs}${tags}</div></a>`;
+}
+
+function visible(e) {
+  if (!e.sources.some(s => state.srcs.has(s.name))) return false;
+  if (state.hsOnly && !(e.tags || []).includes("High school")) return false;
+  return true;
+}
+
+function render() {
+  const pool = state.events.filter(visible);
+  const byDate = (a, b) => (toDate(a.start || a.end) || 0) - (toDate(b.start || b.end) || 0);
+
+  // In person
+  const nearSec = $("#near-sec"); nearSec.hidden = !state.modes.has("near");
+  if (!state.here) {
+    $("#near-title").textContent = "Near you";
+    $("#near-count").textContent = "";
+    $("#near").innerHTML = `<div class="empty">Type your city above or tap <b>Use my location</b> to see in-person events around you.</div>`;
+  } else {
+    const near = pool.filter(e => e.mode !== "online" && e.lat != null)
+      .map(e => ({ ...e, _d: km(state.here, e) })).filter(e => e._d <= state.radius).sort(byDate);
+    $("#near-title").textContent = `Within ${state.radius.toLocaleString()} km of ${state.here.label}`;
+    $("#near-count").textContent = `${near.length} event${near.length === 1 ? "" : "s"}`;
+    if (near.length) {
+      $("#near").innerHTML = `<div class="grid">${near.map(card).join("")}</div>`;
+    } else {
+      const closest = pool.filter(e => e.mode !== "online" && e.lat != null).map(e => ({ ...e, _d: km(state.here, e) })).sort((a, b) => a._d - b._d)[0];
+      $("#near").innerHTML = `<div class="empty">Nothing in this radius right now.${closest ? ` The closest one is <b>${esc(closest.name)}</b>, ${Math.round(closest._d).toLocaleString()} km away. Try a bigger radius.` : ""}</div>`;
+    }
+  }
+
+  // Online
+  const onSec = $("#online-sec"); onSec.hidden = !state.modes.has("online");
+  const online = pool.filter(e => e.mode === "online" || e.mode === "hybrid").sort(byDate);
+  $("#online-count").textContent = `${online.length} event${online.length === 1 ? "" : "s"}`;
+  $("#online").innerHTML = online.length
+    ? `<div class="grid">${online.slice(0, state.onlineLimit).map(e => card({ ...e, _d: null })).join("")}</div>` +
+      (online.length > state.onlineLimit ? `<button class="more" id="more">Show ${Math.min(24, online.length - state.onlineLimit)} more</button>` : "")
+    : `<div class="empty">No online events match these filters.</div>`;
+  const more = $("#more"); if (more) more.onclick = () => { state.onlineLimit += 24; render(); };
+}
+
+function setHere(here) {
+  state.here = here; store.set("hf-here", here);
+  $("#loc").value = here.label;
+  $("#status").textContent = "";
+  render();
+}
+
+// City search (Open-Meteo's free geocoder, no key needed)
+let timer, lastQ = "";
+$("#loc").addEventListener("input", e => {
+  clearTimeout(timer);
+  const q = e.target.value.trim();
+  if (q.length < 2) { $("#suggest").style.display = "none"; return; }
+  timer = setTimeout(async () => {
+    lastQ = q;
+    try {
+      const r = await fetch(`https://geocoding-api.open-meteo.com/v1/search?count=6&language=en&format=json&name=${encodeURIComponent(q)}`);
+      const j = await r.json();
+      if (q !== lastQ) return;
+      const res = j.results || [];
+      $("#suggest").innerHTML = res.length ? res.map((p, i) =>
+        `<button type="button" data-i="${i}">${esc(p.name)} <small>${esc([p.admin1, p.country].filter(Boolean).join(", "))}</small></button>`).join("")
+        : `<button type="button" disabled>No places found</button>`;
+      $("#suggest").style.display = "block";
+      $("#suggest").querySelectorAll("button[data-i]").forEach(b => b.onclick = () => {
+        const p = res[+b.dataset.i];
+        $("#suggest").style.display = "none";
+        setHere({ lat: p.latitude, lng: p.longitude, label: p.name });
+      });
+    } catch { $("#status").textContent = "Couldn't look up that place. Check your connection and try again."; }
+  }, 250);
+});
+$("#loc").addEventListener("keydown", e => {
+  if (e.key === "Enter") { const b = $("#suggest button[data-i]"); if (b) b.click(); }
+  if (e.key === "Escape") $("#suggest").style.display = "none";
+});
+document.addEventListener("click", e => { if (!e.target.closest(".field")) $("#suggest").style.display = "none"; });
+
+$("#gps").onclick = () => {
+  if (!navigator.geolocation) { $("#status").textContent = "Your browser can't share location. Type your city instead."; return; }
+  $("#status").textContent = "Finding you…";
+  navigator.geolocation.getCurrentPosition(
+    p => setHere({ lat: p.coords.latitude, lng: p.coords.longitude, label: "you" }),
+    () => { $("#status").textContent = "Location was blocked. Type your city instead."; },
+    { timeout: 10000 });
+};
+$("#radius").onchange = e => { state.radius = +e.target.value; store.set("hf-radius", state.radius); render(); };
+
+$("#filters").addEventListener("click", e => {
+  const b = e.target.closest(".chip"); if (!b) return;
+  const on = b.getAttribute("aria-pressed") !== "true";
+  b.setAttribute("aria-pressed", on);
+  if (b.dataset.mode) on ? state.modes.add(b.dataset.mode) : state.modes.delete(b.dataset.mode);
+  if (b.dataset.src) on ? state.srcs.add(b.dataset.src) : state.srcs.delete(b.dataset.src);
+  if ("hs" in b.dataset) state.hsOnly = on;
+  render();
+});
+
+function ago(iso) {
+  const m = Math.round((Date.now() - new Date(iso)) / 60000);
+  return m < 60 ? `${m} min ago` : m < 1440 ? `${Math.round(m / 60)} h ago` : `${Math.round(m / 1440)} days ago`;
+}
+
+(async function start() {
+  const r0 = store.get("hf-radius"); if (r0) { state.radius = r0; $("#radius").value = String(r0); }
+  try {
+    const data = await (await fetch("events.json", { cache: "no-cache" })).json();
+    state.events = data.events || [];
+    const src = Object.entries(data.sources || {}).map(([k, v]) =>
+      v.ok ? `${esc(k)} (${v.count})` : `<span class="bad">${esc(k)} (failed this run)</span>`).join(" · ");
+    $("#foot").innerHTML = `${state.events.length} events · updated ${ago(data.generated_at)}<br>Sources: ${src}<br>Always check the event's own page for exact dates and who can join.`;
+    $("#status").textContent = "";
+  } catch {
+    $("#status").textContent = "Couldn't load events.json. If you're opening this file directly, run it through a local server or GitHub Pages.";
+  }
+  const h = store.get("hf-here"); if (h && h.lat != null) setHere(h); else render();
+})();
+</script>
+</body>
+</html>
