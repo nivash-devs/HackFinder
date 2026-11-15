@@ -188,7 +188,10 @@ function visible(e) {
 
 function render() {
   const pool = state.events.filter(visible);
-  const byDate = (a, b) => (toDate(a.start || a.end) || 0) - (toDate(b.start || b.end) || 0);
+  // live events first (by when they end), then upcoming ones by start date
+  const key = e => { const s = toDate(e.start), t = toDate(e.end), n = Date.now();
+    if ((!s || s <= n) && t) return t.getTime() - 1e13; return s ? s.getTime() : Infinity; };
+  const byDate = (a, b) => key(a) - key(b);
 
   // In person
   const nearSec = $("#near-sec"); nearSec.hidden = !state.modes.has("near");
