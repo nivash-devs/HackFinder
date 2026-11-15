@@ -9,6 +9,7 @@ Nobody has to submit anything. If an event is public on one of these
 sites, it shows up here on the next run.
 """
 import datetime as dt
+import functools
 import json
 import re
 import sys
@@ -27,6 +28,7 @@ CACHE_FILE = ROOT / "data" / "geocache.json"
 # Put your GitHub repo link here once you have one.
 USER_AGENT = "HackFinder/0.1 (student project; https://github.com/nivash-devs/HackFinder)"
 
+print = functools.partial(print, flush=True)  # show progress live in the GitHub log
 S = requests.Session()
 S.headers["User-Agent"] = USER_AGENT
 
@@ -88,6 +90,23 @@ def geocode(query, cache):
         return None
     cache["geo"][key] = val
     return val
+
+
+def geocode_place(place, cache):
+    """Full addresses like 'Student Union Bldg, 6138 Student Union Blvd #2201, Vancouver, BC V6T 1Z1, Canada'
+    often fail. If one does, drop the first part (building name, then street) and retry,
+    down to just 'city, region, country'. Close enough for a radius search."""
+    parts = [p.strip() for p in place.split(",") if p.strip()]
+    for i in range(len(parts)):
+        rest = parts[i:]
+        if i > 0 and len(rest) < 2:
+            break
+        q = ", ".join(rest)
+        q = re.sub(r"\s*#[^,\s]+", "", q)  # suite numbers confuse the geocoder
+        ll = geocode(q, cache)
+        if ll:
+            return ll
+    return None
 
 
 def parse_devpost_dates(text):
@@ -303,7 +322,7 @@ def main():
 
     for e in events:
         if e["mode"] != "online" and e["lat"] is None and e["place"]:
-            ll = geocode(e["place"], cache)
+            ll = geocode_place(e["place"], cache)
             if ll:
                 e["lat"], e["lng"] = ll
         e.pop("source", None)
