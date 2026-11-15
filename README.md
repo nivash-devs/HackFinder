@@ -17,7 +17,7 @@ Organizers don't sign up or paste anything. If an event is public on one of thes
 
 1. `scraper/fetch_events.py` downloads the listings, converts them to one format, merges duplicates (the same event is often on MLH and Devpost), and turns addresses into map coordinates with OpenStreetMap's free geocoder.
 2. It writes `site/events.json`.
-3. `site/index.html` loads that file. When you type a city, it finds the city's coordinates (Open-Meteo's free geocoder) and shows events within your radius using the haversine formula for distance on a sphere.
+3. `site/index.html` loads that file. When you type a city, it finds the city's coordinates (Photon, a free OpenStreetMap geocoder) and shows events within your radius using the haversine formula for distance on a sphere.
 4. A GitHub Action does steps 1 and 2 every 6 hours and republishes the site. Free.
 
 ## Put it online (about 10 minutes)
