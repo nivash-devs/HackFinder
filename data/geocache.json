@@ -133,6 +133,10 @@
    29.75447,
    -95.6372
   ],
+  "14325 goldenwest st, westminster, ca 92683, usa": [
+   33.75375,
+   -118.01105
+  ],
   "1900 university ave, austin, tx 78705, usa": [
    30.28203,
    -97.74064
@@ -299,6 +303,10 @@
   "amherst, ma, us": [
    42.37319,
    -72.51988
+  ],
+  "arlington, texas, us": [
+   32.73558,
+   -97.10712
   ],
   "at&t executive education & conference center, 1900 university ave, austin, tx 78705, usa": null,
   "atlanta, ga, us": [
@@ -496,6 +504,10 @@
    -123.25006
   ],
   "student union building, 4505 s maryland pkwy, las vegas, nv 89154, usa": null,
+  "tempe, arizona, us": [
+   33.42551,
+   -111.94002
+  ],
   "timișoara, timiș, ro": [
    45.75384,
    21.22575
@@ -521,6 +533,10 @@
   "wellesley, ma 02481, usa": [
    42.29649,
    -71.29256
+  ],
+  "ypsilanti, michigan, us": [
+   42.24105,
+   -83.61176
   ]
  }
 }
