@@ -67,6 +67,7 @@
   "https://opportunity-hack-2026-arizona.devpost.com/": "501 E Tyler Mall, Tempe, AZ 85281, USA",
   "https://pixel-forge-gamethon.devpost.com/": "Dayananda Sagara Educational Institution, Badamanavarathekaval, Karnataka 560082, India",
   "https://project-zh.devpost.com/": "79 Z.Nudiraliyev str, Bakı, Azerbaijan",
+  "https://ramhack-mini-2026.devpost.com/": "113 W 60th St, New York, NY 10023, USA",
   "https://rebelhacks-2027.devpost.com/": "Student Union Building, 4505 S Maryland Pkwy, Las Vegas, NV 89154, USA",
   "https://revolution-mty2026.devpost.com/": "Av Fundidora, Obrera, 64010 Monterrey, N.L., Mexico",
   "https://sand-hacks-26.devpost.com/": "9736 Engineers Ln, La Jolla, CA 92093, USA",
@@ -112,6 +113,10 @@
   "11098 fgcu blvd n, fort myers, fl 33965, usa": [
    26.46519,
    -81.77018
+  ],
+  "113 w 60th st, new york, ny 10023, usa": [
+   40.77077,
+   -73.98512
   ],
   "11308 89 ave nw, edmonton, ab t6g 2j5, canada": null,
   "11762 106 st, edmonton, ab t5g 3h6, canada": [
