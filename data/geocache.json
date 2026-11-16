@@ -34,6 +34,7 @@
   "https://h-a-r-d-hack-2027.devpost.com/": "9736 Engineers Ln, La Jolla, CA 92093, USA",
   "https://hack-a-ton-with-friends.devpost.com/": "11762 106 St, Edmonton, AB T5G 3H6, Canada",
   "https://hack-peel.devpost.com/": "3225 Erindale Station Rd, Mississauga, ON L5C 1Y5, Canada",
+  "https://hack-the-galaxy-2027.devpost.com/": "AQ Building, 8888 University Dr W, Burnaby, BC V5A 1S6, Canada",
   "https://hack-the-harvest.devpost.com/": "4480 2nd Ave, Sacramento, CA 95817, USA",
   "https://hack-the-nest.devpost.com/": "Oakwood Center Lot, 900 Oakwood St, Ypsilanti, MI 48197, USA",
   "https://hack-western-13.devpost.com/": "1400 Western Rd, London, ON N6G 2V4, Canada",
@@ -83,6 +84,7 @@
   "https://ubc-hackathon-2026.devpost.com/": "AT&T Executive Education & Conference Center, 1900 University Ave, Austin, TX 78705, USA",
   "https://vibeathon-mexico-2026.devpost.com/": "Blvd. Pdte. Manuel Ávila Camacho 261, Periodista, Miguel Hidalgo, 11220 Ciudad de México, CDMX, Mexico",
   "https://vibecode-animated-maps.devpost.com/": "2484 Plainfield Ave, South Plainfield, NJ 07080, USA",
+  "https://visionhacks.devpost.com/": "1430 Trafalgar Rd, Oakville, ON L6H 2L1, Canada",
   "https://wellesleyhack-2026.devpost.com/": "Lulu Chow Wang Campus Center, 21 Wellesley College Rd, Wellesley, MA 02481, USA",
   "https://whs-build.devpost.com/": "14201 Briar Forest Dr, Houston, TX 77077, USA",
   "https://wics-geaux-hack-2027.devpost.com/": "3304 S Quad Dr, Baton Rouge, LA 70803, USA",
@@ -132,6 +134,10 @@
   "14201 briar forest dr, houston, tx 77077, usa": [
    29.75447,
    -95.6372
+  ],
+  "1430 trafalgar rd, oakville, on l6h 2l1, canada": [
+   43.46866,
+   -79.70138
   ],
   "14325 goldenwest st, westminster, ca 92683, usa": [
    33.75375,
@@ -283,6 +289,7 @@
    37.31139,
    -121.84088
   ],
+  "8888 university dr w, burnaby, bc v5a 1s6, canada": null,
   "900 oakwood st, ypsilanti, mi 48197, usa": [
    42.24833,
    -83.62914
@@ -304,11 +311,16 @@
    42.37319,
    -72.51988
   ],
+  "aq building, 8888 university dr w, burnaby, bc v5a 1s6, canada": null,
   "arlington, texas, us": [
    32.73558,
    -97.10712
   ],
   "at&t executive education & conference center, 1900 university ave, austin, tx 78705, usa": null,
+  "athens, georgia, us": [
+   33.95977,
+   -83.3764
+  ],
   "atlanta, ga, us": [
    33.75447,
    -84.38982
@@ -340,6 +352,10 @@
   "brooklyn, new york, us": [
    40.6526,
    -73.94972
+  ],
+  "burnaby, bc v5a 1s6, canada": [
+   49.24338,
+   -122.97254
   ],
   "center for computing & data sciences boston university, 665 commonwealth ave, boston, ma 02215, usa": null,
   "chrysler hall tower, 401 sunset ave, windsor, on n9b 3p4, canada": null,
@@ -431,6 +447,10 @@
    37.43323,
    -121.89892
   ],
+  "missisauga, ontario, ca": [
+   43.6263,
+   -79.67651
+  ],
   "montreal, qc h3t 1j4, canada": [
    45.50318,
    -73.56981
@@ -479,7 +499,19 @@
    40.3497,
    -74.65974
   ],
+  "providence, ri, us": [
+   41.82399,
+   -71.41283
+  ],
+  "raleigh, north carolina, us": [
+   35.7804,
+   -78.6391
+  ],
   "rice hall information technology engineering building, 85 engineer's way, charlottesville, va 22903, usa": null,
+  "san francisco, ca, us": [
+   37.78794,
+   -122.40752
+  ],
   "san francisco, ca, usa": [
    37.78794,
    -122.40752
@@ -508,6 +540,10 @@
    33.42551,
    -111.94002
   ],
+  "thrissur, kerala, in": [
+   10.4787,
+   76.27365
+  ],
   "timișoara, timiș, ro": [
    45.75384,
    21.22575
@@ -533,6 +569,10 @@
   "wellesley, ma 02481, usa": [
    42.29649,
    -71.29256
+  ],
+  "west lafayette, indiana, us": [
+   40.42587,
+   -86.90807
   ],
   "ypsilanti, michigan, us": [
    42.24105,
