@@ -63,6 +63,7 @@
   "https://nutech-hackfest-2026.devpost.com/": "Karnal Sher Khan Shaheed Rd, I-12, Pakistan",
   "https://ocsefhacks3.devpost.com/": "14325 Goldenwest St, Westminster, CA 92683, USA",
   "https://onhacks.devpost.com/": "206 Beverley St, Toronto, ON M5T 1Z3, Canada",
+  "https://open-sourcery-f26-showcase.devpost.com/": "8125 Paint Branch Dr, College Park, MD 20740, USA",
   "https://openbio-datathon.devpost.com/": "Maxwell-Dworkin, 33 Oxford St, Cambridge, MA 02138, USA",
   "https://opportunity-hack-2026-arizona.devpost.com/": "501 E Tyler Mall, Tempe, AZ 85281, USA",
   "https://pixel-forge-gamethon.devpost.com/": "Dayananda Sagara Educational Institution, Badamanavarathekaval, Karnataka 560082, India",
@@ -282,6 +283,10 @@
    -97.13292
   ],
   "79 z.nudiraliyev str, bakı, azerbaijan": null,
+  "8125 paint branch dr, college park, md 20740, usa": [
+   38.98929,
+   -76.93662
+  ],
   "8210 lankford hwy, oak hall, va 23416, usa": [
    37.92488,
    -75.55057
