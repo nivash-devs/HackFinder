@@ -5,6 +5,7 @@
   "https://aichr-space.devpost.com/": "5555 Greenwich Rd, Virginia Beach, VA 23462, USA",
   "https://bearhacks2027.devpost.com/": "4180 Duke of York Blvd, Mississauga, ON L5B 0G5, Canada",
   "https://bharat-builds-tour.devpost.com/": "Jaipur, Rajasthan, India",
+  "https://bisonhacks-2027.devpost.com/": "School of Business, 2600 6th St NW, Washington, DC 20059, USA",
   "https://bisv-hacks-2027.devpost.com/": "1290 Parkmoor Ave, San Jose, CA 95126, USA",
   "https://blackout-2026.devpost.com/": "Coimbatore, Tamil Nadu, India",
   "https://bostonhacks-2026.devpost.com/": "George Sherman Union, 775 Commonwealth Ave, Boston, MA 02215, USA",
@@ -13,6 +14,7 @@
   "https://central-hacks.devpost.com/": "Pearce Hall, Mt Pleasant, MI 48858, USA",
   "https://checkpoint-journeys-hanoi.devpost.com/": "Khu đô thị Mỗ Lao, Hà Đông, Hà Nội, Vietnam",
   "https://civic-hacks-2027-32027.devpost.com/": "Center for Computing & Data Sciences Boston University, 665 Commonwealth Ave, Boston, MA 02215, USA",
+  "https://creator-economy-you-hack.devpost.com/": "25 Kent Ave, Brooklyn, NY 11249, USA",
   "https://cutie-hack-2026.devpost.com/": "Kim Wilcox Drive N, Riverside, CA 92507, USA",
   "https://datathon-polyfinances-bnc-aws.devpost.com/": "Pavillons Pierre-Lassonde et Claudette McKay-Lassonde, 2500 Chem. de Polytechnique, Montreal, QC H3T 1J4, Canada",
   "https://desert-dev-lab-2027.devpost.com/": "609 Broadway Blvd NE, Albuquerque, NM 87102, USA",
@@ -84,6 +86,7 @@
   "https://techtotreasure.devpost.com/": "880 Tully Rd, San Jose, CA 95111, USA",
   "https://theagent-to-agent-hackathon.devpost.com/": "OJone Building, 72, Service Rd, LRDE Layout, Doddanekundi, Marathahalli, Bengaluru, Karnataka 560037, India",
   "https://ticket-to-hack.devpost.com/": "Rice Hall Information Technology Engineering Building, 85 Engineer's Way, Charlottesville, VA 22903, USA",
+  "https://tum-xr-hackathon-2026.devpost.com/": null,
   "https://ubc-hackathon-2026.devpost.com/": "AT&T Executive Education & Conference Center, 1900 University Ave, Austin, TX 78705, USA",
   "https://vibeathon-mexico-2026.devpost.com/": "Blvd. Pdte. Manuel Ávila Camacho 261, Periodista, Miguel Hidalgo, 11220 Ciudad de México, CDMX, Mexico",
   "https://vibecode-animated-maps.devpost.com/": "2484 Plainfield Ave, South Plainfield, NJ 07080, USA",
@@ -175,6 +178,10 @@
   "2484 plainfield ave, south plainfield, nj 07080, usa": [
    40.58376,
    -74.41571
+  ],
+  "25 kent ave, brooklyn, ny 11249, usa": [
+   40.72294,
+   -73.95877
   ],
   "2500 chem. de polytechnique, montreal, qc h3t 1j4, canada": null,
   "3304 s quad dr, baton rouge, la 70803, usa": [
@@ -530,6 +537,10 @@
   "san francisco, ca, usa": [
    37.78794,
    -122.40752
+  ],
+  "school of business, 2600 6th st nw, washington, dc 20059, usa": [
+   38.92422,
+   -77.02217
   ],
   "seattle, wa, usa": [
    47.60383,
