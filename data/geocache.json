@@ -7,6 +7,7 @@
   "https://bharat-builds-tour.devpost.com/": "Jaipur, Rajasthan, India",
   "https://bisv-hacks-2027.devpost.com/": "1290 Parkmoor Ave, San Jose, CA 95126, USA",
   "https://blackout-2026.devpost.com/": "Coimbatore, Tamil Nadu, India",
+  "https://bostonhacks-2026.devpost.com/": "George Sherman Union, 775 Commonwealth Ave, Boston, MA 02215, USA",
   "https://build-day.devpost.com/": "Durham, UK",
   "https://business-battkefuekd.devpost.com/": "4802 Lakeview Ave, Yorba Linda, CA 92886, USA",
   "https://central-hacks.devpost.com/": "Pearce Hall, Mt Pleasant, MI 48858, USA",
@@ -406,6 +407,10 @@
   "food services building, 8451 lake dr, annandale, va 22003, usa": [
    38.83457,
    -77.23587
+  ],
+  "george sherman union, 775 commonwealth ave, boston, ma 02215, usa": [
+   42.35097,
+   -71.10898
   ],
   "h2, 4000 central florida blvd, orlando, fl 32816, usa": null,
   "hamilton, ontario, ca": [
