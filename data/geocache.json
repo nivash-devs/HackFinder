@@ -15,6 +15,7 @@
   "https://checkpoint-journeys-hanoi.devpost.com/": "Khu đô thị Mỗ Lao, Hà Đông, Hà Nội, Vietnam",
   "https://civic-hacks-2027-32027.devpost.com/": "Center for Computing & Data Sciences Boston University, 665 Commonwealth Ave, Boston, MA 02215, USA",
   "https://creator-economy-you-hack.devpost.com/": "25 Kent Ave, Brooklyn, NY 11249, USA",
+  "https://cursorflowaitr.devpost.com/": "Malwa County, Mangliya, Rahu Khedi, Indore, Madhya Pradesh 453771, India",
   "https://cutie-hack-2026.devpost.com/": "Kim Wilcox Drive N, Riverside, CA 92507, USA",
   "https://datathon-polyfinances-bnc-aws.devpost.com/": "Pavillons Pierre-Lassonde et Claudette McKay-Lassonde, 2500 Chem. de Polytechnique, Montreal, QC H3T 1J4, Canada",
   "https://desert-dev-lab-2027.devpost.com/": "609 Broadway Blvd NE, Albuquerque, NM 87102, USA",
@@ -433,6 +434,10 @@
    33.62827,
    73.00294
   ],
+  "indore, madhya pradesh 453771, india": [
+   22.72036,
+   75.8682
+  ],
   "jaipur, rajasthan, india": [
    26.91546,
    75.81898
@@ -462,6 +467,8 @@
    30.28607,
    -97.73935
   ],
+  "malwa county, mangliya, rahu khedi, indore, madhya pradesh 453771, india": null,
+  "mangliya, rahu khedi, indore, madhya pradesh 453771, india": null,
   "manhattan, kansas, us": [
    39.18361,
    -96.57167
@@ -530,6 +537,7 @@
    41.82399,
    -71.41283
   ],
+  "rahu khedi, indore, madhya pradesh 453771, india": null,
   "raleigh, north carolina, us": [
    35.7804,
    -78.6391
