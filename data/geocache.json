@@ -52,6 +52,7 @@
   "https://haven-seattle.devpost.com/": "Seattle, WA, USA",
   "https://hook-em-hacks-2027.devpost.com/": "Main Building, 110 Inner Campus Drive, Austin, TX 78705, USA",
   "https://hoya-hacks-2027.devpost.com/": "3700 O St NW, Washington, DC 20057, USA",
+  "https://hudhackher.devpost.com/": "Canalside East, Huddersfield HD1 3DR, UK",
   "https://immerse-the-bay-2026.devpost.com/": "450 Jane Stanford Way, Stanford, CA 94305, USA",
   "https://innovate-in-windsor-hackathon.devpost.com/": "Chrysler Hall Tower, 401 Sunset Ave, Windsor, ON N9B 3P4, Canada",
   "https://k-dub-hacks.devpost.com/": "2240 University Ave, Waterloo, ON N2K 0G3, Canada",
@@ -374,6 +375,10 @@
   "burnaby, bc v5a 1s6, canada": [
    49.24338,
    -122.97254
+  ],
+  "canalside east, huddersfield hd1 3dr, uk": [
+   53.64162,
+   -1.77771
   ],
   "center for computing & data sciences boston university, 665 commonwealth ave, boston, ma 02215, usa": null,
   "chrysler hall tower, 401 sunset ave, windsor, on n9b 3p4, canada": null,
