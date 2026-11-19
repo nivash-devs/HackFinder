@@ -77,6 +77,7 @@
   "https://ramhack-mini-2026.devpost.com/": "113 W 60th St, New York, NY 10023, USA",
   "https://rebelhacks-2027.devpost.com/": "Student Union Building, 4505 S Maryland Pkwy, Las Vegas, NV 89154, USA",
   "https://revolution-mty2026.devpost.com/": "Av Fundidora, Obrera, 64010 Monterrey, N.L., Mexico",
+  "https://rookie-hacks.devpost.com/": "Helsinki, Finland",
   "https://sand-hacks-26.devpost.com/": "9736 Engineers Ln, La Jolla, CA 92093, USA",
   "https://sandbox-test-2.devpost.com/": "10504 Princess Elizabeth Ave NW, Edmonton, AB T5G 3K4, Canada",
   "https://sc-quantathon-v4.devpost.com/": "405 S Palmetto Blvd, Clemson, SC 29634, USA",
@@ -430,6 +431,10 @@
   "hamilton, ontario, ca": [
    43.25608,
    -79.87286
+  ],
+  "helsinki, finland": [
+   60.16662,
+   24.94354
   ],
   "i-12, pakistan": [
    33.62827,
