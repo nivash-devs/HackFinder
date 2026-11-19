@@ -32,6 +32,7 @@
   "https://ese4500f26.devpost.com/": "3317 Chestnut St Bridge, Philadelphia, PA, USA",
   "https://firebird-hacks-32077.devpost.com/": "8210 Lankford Hwy, Oak Hall, VA 23416, USA",
   "https://forgehacks-biztech.devpost.com/": "Pharmaceutical Sciences Building, 2405 Wesbrook Mall, Vancouver, BC V6T 1Z3, Canada",
+  "https://free-aws-courses.devpost.com/": "Online",
   "https://futureforge-hacks.devpost.com/": "Pleasanton, CA, USA",
   "https://goathacks-2027.devpost.com/": "Washburn Building, 100 Institute Rd, Worcester, MA 01609, USA",
   "https://gtransformer-buildathon-2026.devpost.com/": "Milpitas, CA, USA",
@@ -506,6 +507,10 @@
    -100.29375
   ],
   "ojone building, 72, service rd, lrde layout, doddanekundi, marathahalli, bengaluru, karnataka 560037, india": null,
+  "online": [
+   43.59047,
+   3.85951
+  ],
   "ottawa, ontario , ca": [
    45.42088,
    -75.69011
