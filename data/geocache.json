@@ -51,6 +51,7 @@
   "https://hackva27.devpost.com/": "Food Services Building, 8451 Lake Dr, Annandale, VA 22003, USA",
   "https://haven-las-vegas.devpost.com/": "920 Pilot Rd, Las Vegas, NV 89119, USA",
   "https://haven-seattle.devpost.com/": "Seattle, WA, USA",
+  "https://henhacks2027.devpost.com/": "Smith Hall, 18 Amstel Ave, Newark, DE 19716, USA",
   "https://hook-em-hacks-2027.devpost.com/": "Main Building, 110 Inner Campus Drive, Austin, TX 78705, USA",
   "https://hoya-hacks-2027.devpost.com/": "3700 O St NW, Washington, DC 20057, USA",
   "https://hudhackher.devpost.com/": "Canalside East, Huddersfield HD1 3DR, UK",
@@ -563,6 +564,10 @@
   "sheffield, south yorkshire, gb": [
    53.38066,
    -1.47023
+  ],
+  "smith hall, 18 amstel ave, newark, de 19716, usa": [
+   39.68063,
+   -75.75434
   ],
   "spain, es": [
    40.42373,
