@@ -90,6 +90,7 @@
   "https://svchackathon2027.devpost.com/": "2405 E College Way, Mount Vernon, WA 98273, USA",
   "https://tbd-hackathon.devpost.com/": "3401 Grays Ferry Ave, Philadelphia, PA 19146, USA",
   "https://techtotreasure.devpost.com/": "880 Tully Rd, San Jose, CA 95111, USA",
+  "https://tfc26.devpost.com/": "45 Arctic Ave, St. John's, NL A1C 5S7, Canada",
   "https://the-upside-hack-2-0.devpost.com/": "5 Ave Taha Hussein, Tunis 1008, Tunisia",
   "https://theagent-to-agent-hackathon.devpost.com/": "OJone Building, 72, Service Rd, LRDE Layout, Doddanekundi, Marathahalli, Bengaluru, Karnataka 560037, India",
   "https://ticket-to-hack.devpost.com/": "Rice Hall Information Technology Engineering Building, 85 Engineer's Way, Charlottesville, VA 22903, USA",
@@ -241,6 +242,10 @@
   "4480 2nd ave, sacramento, ca 95817, usa": [
    38.55092,
    -121.45389
+  ],
+  "45 arctic ave, st. john's, nl a1c 5s7, canada": [
+   47.57404,
+   -52.73494
   ],
   "450 jane stanford way, stanford, ca 94305, usa": [
    37.43127,
