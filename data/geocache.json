@@ -53,6 +53,7 @@
   "https://haven-las-vegas.devpost.com/": "920 Pilot Rd, Las Vegas, NV 89119, USA",
   "https://haven-seattle.devpost.com/": "Seattle, WA, USA",
   "https://henhacks2027.devpost.com/": "Smith Hall, 18 Amstel Ave, Newark, DE 19716, USA",
+  "https://her-200-hackathon.devpost.com/": "250 Bedford Park Blvd W, Bronx, NY 10468, USA",
   "https://hook-em-hacks-2027.devpost.com/": "Main Building, 110 Inner Campus Drive, Austin, TX 78705, USA",
   "https://hoya-hacks-2027.devpost.com/": "3700 O St NW, Washington, DC 20057, USA",
   "https://hudhackher.devpost.com/": "Canalside East, Huddersfield HD1 3DR, UK",
@@ -89,6 +90,7 @@
   "https://svchackathon2027.devpost.com/": "2405 E College Way, Mount Vernon, WA 98273, USA",
   "https://tbd-hackathon.devpost.com/": "3401 Grays Ferry Ave, Philadelphia, PA 19146, USA",
   "https://techtotreasure.devpost.com/": "880 Tully Rd, San Jose, CA 95111, USA",
+  "https://the-upside-hack-2-0.devpost.com/": "5 Ave Taha Hussein, Tunis 1008, Tunisia",
   "https://theagent-to-agent-hackathon.devpost.com/": "OJone Building, 72, Service Rd, LRDE Layout, Doddanekundi, Marathahalli, Bengaluru, Karnataka 560037, India",
   "https://ticket-to-hack.devpost.com/": "Rice Hall Information Technology Engineering Building, 85 Engineer's Way, Charlottesville, VA 22903, USA",
   "https://tum-xr-hackathon-2026.devpost.com/": null,
@@ -188,6 +190,10 @@
    40.72294,
    -73.95877
   ],
+  "250 bedford park blvd w, bronx, ny 10468, usa": [
+   40.87228,
+   -73.89489
+  ],
   "2500 chem. de polytechnique, montreal, qc h3t 1j4, canada": null,
   "3304 s quad dr, baton rouge, la 70803, usa": [
    30.40661,
@@ -246,6 +252,7 @@
    33.8911,
    -117.81078
   ],
+  "5 ave taha hussein, tunis 1008, tunisia": null,
   "50 nanyang ave, singapore 639798": [
    1.34703,
    103.68209
@@ -609,6 +616,10 @@
   "toronto, ontario, ca": [
    43.65348,
    -79.38393
+  ],
+  "tunis 1008, tunisia": [
+   36.80021,
+   10.18578
   ],
   "undergraduate academic services building, 400 e orange st., tempe, az 85281, usa": null,
   "vancouver, bc, canada": [
