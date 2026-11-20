@@ -93,6 +93,7 @@
   "https://the-upside-hack-2-0.devpost.com/": "5 Ave Taha Hussein, Tunis 1008, Tunisia",
   "https://theagent-to-agent-hackathon.devpost.com/": "OJone Building, 72, Service Rd, LRDE Layout, Doddanekundi, Marathahalli, Bengaluru, Karnataka 560037, India",
   "https://ticket-to-hack.devpost.com/": "Rice Hall Information Technology Engineering Building, 85 Engineer's Way, Charlottesville, VA 22903, USA",
+  "https://tuj-fall-2026-hackathon.devpost.com/": "1 Chome-14 Taishido, Setagaya City, Tokyo 154-0004, Japan",
   "https://tum-xr-hackathon-2026.devpost.com/": null,
   "https://ubc-hackathon-2026.devpost.com/": "AT&T Executive Education & Conference Center, 1900 University Ave, Austin, TX 78705, USA",
   "https://vibeathon-mexico-2026.devpost.com/": "Blvd. Pdte. Manuel Ávila Camacho 261, Periodista, Miguel Hidalgo, 11220 Ciudad de México, CDMX, Mexico",
@@ -106,6 +107,7 @@
  },
  "geo": {
   "042 00, boženy němcovej 7, 042 00 košice-sever, slovakia": null,
+  "1 chome-14 taishido, setagaya city, tokyo 154-0004, japan": null,
   "100 institute rd, worcester, ma 01609, usa": [
    42.27432,
    -71.80846
@@ -582,6 +584,10 @@
    -122.33006
   ],
   "service rd, lrde layout, doddanekundi, marathahalli, bengaluru, karnataka 560037, india": null,
+  "setagaya city, tokyo 154-0004, japan": [
+   35.64653,
+   139.65325
+  ],
   "sheffield, south yorkshire, gb": [
    53.38066,
    -1.47023
