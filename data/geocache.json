@@ -61,6 +61,7 @@
   "https://hudhackher.devpost.com/": "Canalside East, Huddersfield HD1 3DR, UK",
   "https://immerse-the-bay-2026.devpost.com/": "450 Jane Stanford Way, Stanford, CA 94305, USA",
   "https://innovate-in-windsor-hackathon.devpost.com/": "Chrysler Hall Tower, 401 Sunset Ave, Windsor, ON N9B 3P4, Canada",
+  "https://javathon-ai-free-hackathon.devpost.com/": "Herbert G. Oxendine Science Building, 1403 Old Main Rd, Pembroke, NC 28372, USA",
   "https://k-dub-hacks.devpost.com/": "2240 University Ave, Waterloo, ON N2K 0G3, Canada",
   "https://kaya-ai-grand-challenge.devpost.com/": "Mumbai, Maharashtra, India",
   "https://khe-2027.devpost.com/": "400 Janik Dr, Kent, OH 44240, USA",
@@ -99,6 +100,7 @@
   "https://the-upside-hack-2-0.devpost.com/": "5 Ave Taha Hussein, Tunis 1008, Tunisia",
   "https://theagent-to-agent-hackathon.devpost.com/": "OJone Building, 72, Service Rd, LRDE Layout, Doddanekundi, Marathahalli, Bengaluru, Karnataka 560037, India",
   "https://ticket-to-hack.devpost.com/": "Rice Hall Information Technology Engineering Building, 85 Engineer's Way, Charlottesville, VA 22903, USA",
+  "https://tidalbyte-26.devpost.com/": "275 Joe Routt Blvd, College Station, TX 77840, USA",
   "https://tuj-fall-2026-hackathon.devpost.com/": "1 Chome-14 Taishido, Setagaya City, Tokyo 154-0004, Japan",
   "https://tum-xr-hackathon-2026.devpost.com/": null,
   "https://ubc-hackathon-2026.devpost.com/": "AT&T Executive Education & Conference Center, 1900 University Ave, Austin, TX 78705, USA",
@@ -160,6 +162,7 @@
    43.01012,
    -81.27714
   ],
+  "1403 old main rd, pembroke, nc 28372, usa": null,
   "14201 briar forest dr, houston, tx 77077, usa": [
    29.75447,
    -95.6372
@@ -215,6 +218,10 @@
    -73.89489
   ],
   "2500 chem. de polytechnique, montreal, qc h3t 1j4, canada": null,
+  "275 joe routt blvd, college station, tx 77840, usa": [
+   30.61223,
+   -96.34122
+  ],
   "285 pl. d'youville, montréal, qc h2y 2a4, canada": [
    45.50175,
    -73.55537
@@ -480,6 +487,7 @@
    60.16662,
    24.94354
   ],
+  "herbert g. oxendine science building, 1403 old main rd, pembroke, nc 28372, usa": null,
   "i-12, pakistan": [
    33.62827,
    73.00294
@@ -566,6 +574,10 @@
   "pearce hall, mt pleasant, mi 48858, usa": [
    43.58657,
    -84.77634
+  ],
+  "pembroke, nc 28372, usa": [
+   34.68007,
+   -79.19335
   ],
   "periodista, miguel hidalgo, 11220 ciudad de méxico, cdmx, mexico": [
    19.44826,
