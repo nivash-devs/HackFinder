@@ -69,6 +69,7 @@
   "https://loop.devpost.com/": "Student Union Bldg, 6138 Student Union Blvd #2201, Vancouver, BC V6T 1Z1, Canada",
   "https://lumahacks.devpost.com/": "H2, 4000 Central Florida Blvd, Orlando, FL 32816, USA",
   "https://madhacks-fall-2026.devpost.com/": "1205 University Ave, Madison, WI 53706, USA",
+  "https://money-talks-3.devpost.com/": "140 W 62nd St, New York, NY 10023, USA",
   "https://nsh-rpi-2027.devpost.com/": "51 College Ave, Troy, NY 12180, USA",
   "https://ntu-beyond-binary-2027.devpost.com/": "50 Nanyang Ave, Singapore 639798",
   "https://nutech-hackfest-2026.devpost.com/": "Karnal Sher Khan Shaheed Rd, I-12, Pakistan",
@@ -83,6 +84,7 @@
   "https://rebelhacks-2027.devpost.com/": "Student Union Building, 4505 S Maryland Pkwy, Las Vegas, NV 89154, USA",
   "https://revolution-mty2026.devpost.com/": "Av Fundidora, Obrera, 64010 Monterrey, N.L., Mexico",
   "https://rookie-hacks.devpost.com/": "Helsinki, Finland",
+  "https://rt-audit-hack-777.devpost.com/": "244 5th Ave, New York, NY 10001, USA",
   "https://sand-hacks-26.devpost.com/": "9736 Engineers Ln, La Jolla, CA 92093, USA",
   "https://sandbox-test-2.devpost.com/": "10504 Princess Elizabeth Ave NW, Edmonton, AB T5G 3K4, Canada",
   "https://sc-quantathon-v4.devpost.com/": "405 S Palmetto Blvd, Clemson, SC 29634, USA",
@@ -150,6 +152,10 @@
    -121.91
   ],
   "140 w 19th ave bldg 151, columbus, oh 43210, usa": null,
+  "140 w 62nd st, new york, ny 10023, usa": [
+   40.77128,
+   -73.98456
+  ],
   "1400 western rd, london, on n6g 2v4, canada": [
    43.01012,
    -81.27714
@@ -191,6 +197,10 @@
   "2405 e college way, mount vernon, wa 98273, usa": [
    48.43769,
    -122.31015
+  ],
+  "244 5th ave, new york, ny 10001, usa": [
+   40.74463,
+   -73.98772
   ],
   "2484 plainfield ave, south plainfield, nj 07080, usa": [
    40.58376,
