@@ -3,6 +3,7 @@
   "https://adahacks-2027.devpost.com/": "11308 89 Ave NW, Edmonton, AB T6G 2J5, Canada",
   "https://ai-usc.devpost.com/": "1031 Downey Way, Los Angeles, CA 90089, USA",
   "https://aichr-space.devpost.com/": "5555 Greenwich Rd, Virginia Beach, VA 23462, USA",
+  "https://algoconnect-quantathon-2026.devpost.com/": "285 Pl. d'Youville, Montréal, QC H2Y 2A4, Canada",
   "https://bearhacks2027.devpost.com/": "4180 Duke of York Blvd, Mississauga, ON L5B 0G5, Canada",
   "https://bharat-builds-tour.devpost.com/": "Jaipur, Rajasthan, India",
   "https://bisonhacks-2027.devpost.com/": "School of Business, 2600 6th St NW, Washington, DC 20059, USA",
@@ -17,6 +18,7 @@
   "https://creator-economy-you-hack.devpost.com/": "25 Kent Ave, Brooklyn, NY 11249, USA",
   "https://cursorflowaitr.devpost.com/": "Malwa County, Mangliya, Rahu Khedi, Indore, Madhya Pradesh 453771, India",
   "https://cutie-hack-2026.devpost.com/": "Kim Wilcox Drive N, Riverside, CA 92507, USA",
+  "https://cyberderby.devpost.com/": "Banani, Dhaka, Bangladesh",
   "https://datathon-polyfinances-bnc-aws.devpost.com/": "Pavillons Pierre-Lassonde et Claudette McKay-Lassonde, 2500 Chem. de Polytechnique, Montreal, QC H3T 1J4, Canada",
   "https://desert-dev-lab-2027.devpost.com/": "609 Broadway Blvd NE, Albuquerque, NM 87102, USA",
   "https://design-at-ut-designathon-2026.devpost.com/": "Main Building, 110 Inner Campus Drive, Austin, TX 78705, USA",
@@ -62,6 +64,7 @@
   "https://k-dub-hacks.devpost.com/": "2240 University Ave, Waterloo, ON N2K 0G3, Canada",
   "https://kaya-ai-grand-challenge.devpost.com/": "Mumbai, Maharashtra, India",
   "https://khe-2027.devpost.com/": "400 Janik Dr, Kent, OH 44240, USA",
+  "https://kickstart-2026.devpost.com/": "2053 Main Mall, Vancouver, BC V6T 1Z2, Canada",
   "https://loohacks.devpost.com/": "2240 University Ave E, Waterloo, ON N2K 0G3, Canada",
   "https://loop.devpost.com/": "Student Union Bldg, 6138 Student Union Blvd #2201, Vancouver, BC V6T 1Z1, Canada",
   "https://lumahacks.devpost.com/": "H2, 4000 Central Florida Blvd, Orlando, FL 32816, USA",
@@ -175,6 +178,10 @@
    40.27096,
    -74.77737
   ],
+  "2053 main mall, vancouver, bc v6t 1z2, canada": [
+   49.26504,
+   -123.25387
+  ],
   "21 wellesley college rd, wellesley, ma 02481, usa": null,
   "2240 university ave e, waterloo, on n2k 0g3, canada": null,
   "2240 university ave, waterloo, on n2k 0g3, canada": [
@@ -198,6 +205,10 @@
    -73.89489
   ],
   "2500 chem. de polytechnique, montreal, qc h3t 1j4, canada": null,
+  "285 pl. d'youville, montréal, qc h2y 2a4, canada": [
+   45.50175,
+   -73.55537
+  ],
   "3304 s quad dr, baton rouge, la 70803, usa": [
    30.40661,
    -91.17941
@@ -375,6 +386,10 @@
   "bakı, azerbaijan": [
    40.37559,
    49.8328
+  ],
+  "banani, dhaka, bangladesh": [
+   23.79032,
+   90.4077
   ],
   "bancroft building, bethnal green, london e1 4np, uk": null,
   "bethnal green, london e1 4np, uk": [
