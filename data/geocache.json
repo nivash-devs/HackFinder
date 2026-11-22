@@ -16,6 +16,7 @@
   "https://checkpoint-journeys-hanoi.devpost.com/": "Khu đô thị Mỗ Lao, Hà Đông, Hà Nội, Vietnam",
   "https://civic-hacks-2027-32027.devpost.com/": "Center for Computing & Data Sciences Boston University, 665 Commonwealth Ave, Boston, MA 02215, USA",
   "https://creator-economy-you-hack.devpost.com/": "25 Kent Ave, Brooklyn, NY 11249, USA",
+  "https://cues-edge-impulse-hackathon.devpost.com/": "Cambridge, UK",
   "https://cursorflowaitr.devpost.com/": "Malwa County, Mangliya, Rahu Khedi, Indore, Madhya Pradesh 453771, India",
   "https://cutie-hack-2026.devpost.com/": "Kim Wilcox Drive N, Riverside, CA 92507, USA",
   "https://cyberderby.devpost.com/": "Banani, Dhaka, Bangladesh",
@@ -71,6 +72,7 @@
   "https://loop.devpost.com/": "Student Union Bldg, 6138 Student Union Blvd #2201, Vancouver, BC V6T 1Z1, Canada",
   "https://lumahacks.devpost.com/": "H2, 4000 Central Florida Blvd, Orlando, FL 32816, USA",
   "https://madhacks-fall-2026.devpost.com/": "1205 University Ave, Madison, WI 53706, USA",
+  "https://mcgill-codejam-16.devpost.com/": "Trottier Bldg, 3630 Rue University, Montreal, QC H3A 0C6, Canada",
   "https://money-talks-3.devpost.com/": "140 W 62nd St, New York, NY 10023, USA",
   "https://nsh-rpi-2027.devpost.com/": "51 College Ave, Troy, NY 12180, USA",
   "https://ntu-beyond-binary-2027.devpost.com/": "50 Nanyang Ave, Singapore 639798",
@@ -432,6 +434,10 @@
    49.24338,
    -122.97254
   ],
+  "cambridge, uk": [
+   52.19758,
+   0.13915
+  ],
   "canalside east, huddersfield hd1 3dr, uk": [
    53.64162,
    -1.77771
@@ -666,6 +672,10 @@
   "toronto, ontario, ca": [
    43.65348,
    -79.38393
+  ],
+  "trottier bldg, 3630 rue university, montreal, qc h3a 0c6, canada": [
+   45.50738,
+   -73.57903
   ],
   "tunis 1008, tunisia": [
    36.80021,
