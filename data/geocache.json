@@ -47,6 +47,7 @@
   "https://hack-the-harvest.devpost.com/": "4480 2nd Ave, Sacramento, CA 95817, USA",
   "https://hack-the-nest.devpost.com/": "Oakwood Center Lot, 900 Oakwood St, Ypsilanti, MI 48197, USA",
   "https://hack-western-13.devpost.com/": "1400 Western Rd, London, ON N6G 2V4, Canada",
+  "https://hack4good-clark.devpost.com/": "7 Hawthorne St, Worcester, MA 01610, USA",
   "https://hackai-toronto.devpost.com/": "100 Queens Quay W, Toronto, ON M5J 2G4, Canada",
   "https://hackstorm3.devpost.com/": "San Francisco, CA, USA",
   "https://hacksussex-gamejam-2026.devpost.com/": "Falmer, Brighton, UK",
@@ -332,6 +333,10 @@
    45.40967,
    -75.72826
   ],
+  "7 hawthorne st, worcester, ma 01610, usa": [
+   42.25148,
+   -71.82027
+  ],
   "701 s nedderman dr, arlington, tx 76019, usa": [
    32.72952,
    -97.11474
@@ -444,6 +449,10 @@
   ],
   "center for computing & data sciences boston university, 665 commonwealth ave, boston, ma 02215, usa": null,
   "chrysler hall tower, 401 sunset ave, windsor, on n9b 3p4, canada": null,
+  "clemson, sc, us": [
+   34.68507,
+   -82.83641
+  ],
   "coimbatore, tamil nadu, india": [
    11.00181,
    76.96284
@@ -523,6 +532,10 @@
   ],
   "lleida, lleida, spain, es": null,
   "lleida, spain, es": null,
+  "london, ontario, ca": [
+   42.98367,
+   -81.24961
+  ],
   "los angeles, ca, us": [
    34.05369,
    -118.24277
@@ -539,6 +552,7 @@
    39.18361,
    -96.57167
   ],
+  "massachesetts, us": null,
   "maxwell-dworkin, 33 oxford st, cambridge, ma 02138, usa": [
    42.37879,
    -71.11731
@@ -699,6 +713,7 @@
    42.29649,
    -71.29256
   ],
+  "wellesley, massachesetts, us": null,
   "west lafayette, indiana, us": [
    40.42587,
    -86.90807
