@@ -78,6 +78,7 @@
   "https://nsh-rpi-2027.devpost.com/": "51 College Ave, Troy, NY 12180, USA",
   "https://ntu-beyond-binary-2027.devpost.com/": "50 Nanyang Ave, Singapore 639798",
   "https://nutech-hackfest-2026.devpost.com/": "Karnal Sher Khan Shaheed Rd, I-12, Pakistan",
+  "https://nwhacks-2027.devpost.com/": "2350 Health Sciences Mall, Vancouver, BC V6T 1Z3, Canada",
   "https://ocsefhacks3.devpost.com/": "14325 Goldenwest St, Westminster, CA 92683, USA",
   "https://onhacks.devpost.com/": "206 Beverley St, Toronto, ON M5T 1Z3, Canada",
   "https://open-sourcery-f26-showcase.devpost.com/": "8125 Paint Branch Dr, College Park, MD 20740, USA",
@@ -201,6 +202,10 @@
   "2240 university ave, waterloo, on n2k 0g3, canada": [
    43.51526,
    -80.51361
+  ],
+  "2350 health sciences mall, vancouver, bc v6t 1z3, canada": [
+   49.2622,
+   -123.24499
   ],
   "2405 e college way, mount vernon, wa 98273, usa": [
    48.43769,
