@@ -53,6 +53,7 @@
   "https://hacksussex-gamejam-2026.devpost.com/": "Falmer, Brighton, UK",
   "https://hacktcnj-2027.devpost.com/": "2000 Pennington Rd, Ewing Township, NJ 08618, USA",
   "https://hackumass-xiv.devpost.com/": "650 N Pleasant St, Amherst, MA 01002, USA",
+  "https://hackuncp-2027.devpost.com/": "1 University Drive, Pembroke, NC 28372, USA",
   "https://hackuta-8.devpost.com/": "701 S Nedderman Dr, Arlington, TX 76019, USA",
   "https://hackva27.devpost.com/": "Food Services Building, 8451 Lake Dr, Annandale, VA 22003, USA",
   "https://haven-las-vegas.devpost.com/": "920 Pilot Rd, Las Vegas, NV 89119, USA",
@@ -123,6 +124,10 @@
  "geo": {
   "042 00, boženy němcovej 7, 042 00 košice-sever, slovakia": null,
   "1 chome-14 taishido, setagaya city, tokyo 154-0004, japan": null,
+  "1 university drive, pembroke, nc 28372, usa": [
+   34.69167,
+   -79.20139
+  ],
   "100 institute rd, worcester, ma 01609, usa": [
    42.27432,
    -71.80846
