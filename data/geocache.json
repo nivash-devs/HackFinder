@@ -77,6 +77,7 @@
   "https://madhacks-fall-2026.devpost.com/": "1205 University Ave, Madison, WI 53706, USA",
   "https://mcgill-codejam-16.devpost.com/": "Trottier Bldg, 3630 Rue University, Montreal, QC H3A 0C6, Canada",
   "https://money-talks-3.devpost.com/": "140 W 62nd St, New York, NY 10023, USA",
+  "https://mosque-expo-hackathon-2026.devpost.com/": "Bath Rd, West Drayton UB7 0EQ, UK",
   "https://nsh-rpi-2027.devpost.com/": "51 College Ave, Troy, NY 12180, USA",
   "https://ntu-beyond-binary-2027.devpost.com/": "50 Nanyang Ave, Singapore 639798",
   "https://nutech-hackfest-2026.devpost.com/": "Karnal Sher Khan Shaheed Rd, I-12, Pakistan",
@@ -429,6 +430,10 @@
    90.4077
   ],
   "bancroft building, bethnal green, london e1 4np, uk": null,
+  "bath rd, west drayton ub7 0eq, uk": [
+   51.48154,
+   -0.46172
+  ],
   "bethnal green, london e1 4np, uk": [
    51.53035,
    -0.05616
