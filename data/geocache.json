@@ -1,6 +1,7 @@
 {
  "devpost_address": {
   "https://adahacks-2027.devpost.com/": "11308 89 Ave NW, Edmonton, AB T6G 2J5, Canada",
+  "https://ai-health-hack-2.devpost.com/": "Paris, France",
   "https://ai-usc.devpost.com/": "1031 Downey Way, Los Angeles, CA 90089, USA",
   "https://aichr-space.devpost.com/": "5555 Greenwich Rd, Virginia Beach, VA 23462, USA",
   "https://algoconnect-quantathon-2026.devpost.com/": "285 Pl. d'Youville, Montréal, QC H2Y 2A4, Canada",
@@ -10,6 +11,7 @@
   "https://bisv-hacks-2027.devpost.com/": "1290 Parkmoor Ave, San Jose, CA 95126, USA",
   "https://blackout-2026.devpost.com/": "Coimbatore, Tamil Nadu, India",
   "https://bostonhacks-2026.devpost.com/": "George Sherman Union, 775 Commonwealth Ave, Boston, MA 02215, USA",
+  "https://build-ai-on-kaspa.devpost.com/": "Bâtiment Voltaire, 14, 16 Rue Voltaire, 94270 Le Kremlin-Bicêtre, France",
   "https://build-day.devpost.com/": "Durham, UK",
   "https://business-battkefuekd.devpost.com/": "4802 Lakeview Ave, Yorba Linda, CA 92886, USA",
   "https://central-hacks.devpost.com/": "Pearce Hall, Mt Pleasant, MI 48858, USA",
@@ -49,6 +51,7 @@
   "https://hack-western-13.devpost.com/": "1400 Western Rd, London, ON N6G 2V4, Canada",
   "https://hack4good-clark.devpost.com/": "7 Hawthorne St, Worcester, MA 01610, USA",
   "https://hackai-toronto.devpost.com/": "100 Queens Quay W, Toronto, ON M5J 2G4, Canada",
+  "https://hackatum26.devpost.com/": "Boltzmannstraße 3, 85748 Garching bei München, Germany",
   "https://hackstorm3.devpost.com/": "San Francisco, CA, USA",
   "https://hacksussex-gamejam-2026.devpost.com/": "Falmer, Brighton, UK",
   "https://hacktcnj-2027.devpost.com/": "2000 Pennington Rd, Ewing Township, NJ 08618, USA",
@@ -166,6 +169,7 @@
    37.31614,
    -121.91
   ],
+  "14, 16 rue voltaire, 94270 le kremlin-bicêtre, france": null,
   "140 w 19th ave bldg 151, columbus, oh 43210, usa": null,
   "140 w 62nd st, new york, ny 10023, usa": [
    40.77128,
@@ -187,6 +191,10 @@
   "14325 goldenwest st, westminster, ca 92683, usa": [
    33.75375,
    -118.01105
+  ],
+  "16 rue voltaire, 94270 le kremlin-bicêtre, france": [
+   48.81579,
+   2.36352
   ],
   "1900 university ave, austin, tx 78705, usa": [
    30.28203,
@@ -439,6 +447,10 @@
    -0.05616
   ],
   "blvd. pdte. manuel ávila camacho 261, periodista, miguel hidalgo, 11220 ciudad de méxico, cdmx, mexico": null,
+  "boltzmannstraße 3, 85748 garching bei münchen, germany": [
+   48.26255,
+   11.66804
+  ],
   "boston, ma, us": [
    42.35883,
    -71.05783
@@ -456,6 +468,7 @@
    -122.97254
   ],
   "bypass road, square, malwa county, mangliya, indore, madhya pradesh 453771, india": null,
+  "bâtiment voltaire, 14, 16 rue voltaire, 94270 le kremlin-bicêtre, france": null,
   "cambridge, uk": [
    52.19758,
    0.13915
@@ -617,6 +630,10 @@
   "ottawa, ontario, ca": [
    45.42088,
    -75.69011
+  ],
+  "paris, france": [
+   48.85889,
+   2.32004
   ],
   "pavillons pierre-lassonde et claudette mckay-lassonde, 2500 chem. de polytechnique, montreal, qc h3t 1j4, canada": null,
   "pearce hall, mt pleasant, mi 48858, usa": [
