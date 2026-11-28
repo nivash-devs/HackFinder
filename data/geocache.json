@@ -14,6 +14,7 @@
   "https://bostonhacks-2026.devpost.com/": "George Sherman Union, 775 Commonwealth Ave, Boston, MA 02215, USA",
   "https://build-ai-on-kaspa.devpost.com/": "Bâtiment Voltaire, 14, 16 Rue Voltaire, 94270 Le Kremlin-Bicêtre, France",
   "https://build-day.devpost.com/": "Durham, UK",
+  "https://buildsgiving.devpost.com/": "10800 Torre Ave, Cupertino, CA 95014, USA",
   "https://business-battkefuekd.devpost.com/": "4802 Lakeview Ave, Yorba Linda, CA 92886, USA",
   "https://central-hacks.devpost.com/": "Pearce Hall, Mt Pleasant, MI 48858, USA",
   "https://checkpoint-journeys-hanoi.devpost.com/": "Khu đô thị Mỗ Lao, Hà Đông, Hà Nội, Vietnam",
@@ -149,6 +150,10 @@
   "10504 princess elizabeth ave nw, edmonton, ab t5g 3k4, canada": [
    53.56719,
    -113.50169
+  ],
+  "10800 torre ave, cupertino, ca 95014, usa": [
+   37.31782,
+   -122.02892
   ],
   "11098 fgcu blvd n, fort myers, fl 33965, usa": [
    26.46519,
