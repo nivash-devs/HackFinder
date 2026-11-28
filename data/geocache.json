@@ -1,6 +1,7 @@
 {
  "devpost_address": {
   "https://adahacks-2027.devpost.com/": "11308 89 Ave NW, Edmonton, AB T6G 2J5, Canada",
+  "https://agentic-ai-elevenlabs-night.devpost.com/": "1208 S 4th St, Champaign, IL 61820, USA",
   "https://ai-health-hack-2.devpost.com/": "Paris, France",
   "https://ai-usc.devpost.com/": "1031 Downey Way, Los Angeles, CA 90089, USA",
   "https://aichr-space.devpost.com/": "5555 Greenwich Rd, Virginia Beach, VA 23462, USA",
@@ -164,6 +165,10 @@
   "1205 university ave, madison, wi 53706, usa": [
    43.0728,
    -89.40685
+  ],
+  "1208 s 4th st, champaign, il 61820, usa": [
+   40.14269,
+   -88.23348
   ],
   "1290 parkmoor ave, san jose, ca 95126, usa": [
    37.31614,
