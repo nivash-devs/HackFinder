@@ -55,6 +55,7 @@
   "https://hackai-toronto.devpost.com/": "100 Queens Quay W, Toronto, ON M5J 2G4, Canada",
   "https://hackatum26.devpost.com/": "Boltzmannstraße 3, 85748 Garching bei München, Germany",
   "https://hackeps2026.devpost.com/": "Carrer de Jaume II, 69, 25001 Lleida, Spain",
+  "https://hacksheffield11.devpost.com/": "The University of Sheffield, 32 Leavygreave Rd, Broomhall, Sheffield S3 7RD, UK",
   "https://hackstorm3.devpost.com/": "San Francisco, CA, USA",
   "https://hacksussex-gamejam-2026.devpost.com/": "Falmer, Brighton, UK",
   "https://hacktcnj-2027.devpost.com/": "2000 Pennington Rd, Ewing Township, NJ 08618, USA",
@@ -123,6 +124,7 @@
   "https://vibecode-animated-maps.devpost.com/": "2484 Plainfield Ave, South Plainfield, NJ 07080, USA",
   "https://visionhacks.devpost.com/": "1430 Trafalgar Rd, Oakville, ON L6H 2L1, Canada",
   "https://wellesleyhack-2026.devpost.com/": "Lulu Chow Wang Campus Center, 21 Wellesley College Rd, Wellesley, MA 02481, USA",
+  "https://what-the-hack-2026.devpost.com/": "8 Somapah Rd, Singapore 487372",
   "https://whs-build.devpost.com/": "14201 Briar Forest Dr, Houston, TX 77077, USA",
   "https://wics-geaux-hack-2027.devpost.com/": "3304 S Quad Dr, Baton Rouge, LA 70803, USA",
   "https://wohack.devpost.com/": "Bancroft Building, Bethnal Green, London E1 4NP, UK",
@@ -262,6 +264,10 @@
    45.50175,
    -73.55537
   ],
+  "32 leavygreave rd, broomhall, sheffield s3 7rd, uk": [
+   53.38162,
+   -1.48214
+  ],
   "3304 s quad dr, baton rouge, la 70803, usa": [
    30.40661,
    -91.17941
@@ -378,6 +384,10 @@
    -97.13292
   ],
   "79 z.nudiraliyev str, bakı, azerbaijan": null,
+  "8 somapah rd, singapore 487372": [
+   1.34224,
+   103.96431
+  ],
   "8125 paint branch dr, college park, md 20740, usa": [
    38.98929,
    -76.93662
@@ -742,6 +752,7 @@
    33.42551,
    -111.94002
   ],
+  "the university of sheffield, 32 leavygreave rd, broomhall, sheffield s3 7rd, uk": null,
   "thrissur, kerala, in": [
    10.4787,
    76.27365
